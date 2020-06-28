@@ -7,7 +7,7 @@ export const Intro = () => {
       <h1>Treasure Hunt</h1>
       <p>
         Answer 10 riddles around Morley Park to find the treasure. Check{" "}
-        <a>your map</a> for clues.
+        <button>your map</button> for clues.
       </p>
       <button>Start</button>
     </div>

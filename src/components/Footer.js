@@ -8,7 +8,11 @@ export class Footer extends React.Component {
         <Likes />
         <span>
           by{" "}
-          <a href="https://www.friendsofmorleypark.org.uk/">
+          <a
+            href="https://www.friendsofmorleypark.org.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Friends of Morley Park
           </a>
         </span>

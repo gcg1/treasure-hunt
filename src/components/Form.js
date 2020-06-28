@@ -1,41 +1,62 @@
 import React from "react";
 import chest from "../treasure-chest.svg";
-import { riddles } from "../riddles";
 import { Riddle } from "./Riddle";
 
 export class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      correctAnswers: 0,
+      riddles: [
+        {
+          id: "latin",
+          question: "What's the latin motto?",
+          options: ["Serviam", "Meliora", "Emeritus", "Apricus"],
+        },
+        {
+          id: "flowers",
+          question: "What colour flower can't you find?",
+          options: ["Red", "Yellow", "White", "Purple"],
+        },
+      ],
+    };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.incrementCorrectAnswers = this.incrementCorrectAnswers.bind(this);
+    this.decrementCorrectAnswers = this.decrementCorrectAnswers.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({ value: e.target.value });
+  incrementCorrectAnswers() {
+    const updatedCorrectAnswers = this.state.correctAnswers + 1;
+    this.setState({ correctAnswers: updatedCorrectAnswers });
+  }
+
+  decrementCorrectAnswers() {
+    const updatedCorrectAnswers = this.state.correctAnswers - 1;
+    this.setState({ correctAnswers: updatedCorrectAnswers });
   }
 
   handleSubmit(e) {
-    // if ("Some questions haven't been answered") {
-    //   console.log("You haven't answered all the questions.");
-    // } else
-    if ("All answers" == "correct") {
-      console.log("Transitioning to success...");
-    } else {
-      console.log("One or more answers are inccorect.");
-    }
     e.preventDefault();
+    // if ("Some questions haven't been answered") {
+    //   alert("You haven't answered all the questions.");
+    // } else
+    if (this.state.correctAnswers == this.state.riddles.length) {
+      alert("Congratulations! You answered all questions correctly.");
+    } else {
+      alert("One or more answers are incorrect :(");
+    }
   }
 
   render() {
-    const riddlesList = riddles.map((riddle) => (
+    const riddlesList = this.state.riddles.map((riddle) => (
       <Riddle
         key={riddle.id}
         id={riddle.id}
         question={riddle.question}
         options={riddle.options}
-        onChange={this.handleChange}
+        incrementCorrectAnswers={this.incrementCorrectAnswers}
+        decrementCorrectAnswers={this.decrementCorrectAnswers}
       />
     ));
 

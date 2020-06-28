@@ -1,22 +1,22 @@
 import React from "react";
 
 export class Riddle extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { value: "" };
-  //   this.handleChange = this.handleChange.bind(this);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = { value: "", answer: this.props.options[0] };
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-  // handleChange(e) {
-  //   this.setState({
-  //     value: e.target.value,
-  //   });
-  // }
-
-  // When you need to handle multiple controlled input elements,
-  // you can add a name attribute to each element and let the
-  // handler function choose what to do based on the value of
-  // event.target.name.
+  handleChange(e) {
+    if (e.target.value === this.state.answer) {
+      this.props.incrementCorrectAnswers();
+    } else if (this.state.value === this.state.answer) {
+      this.props.decrementCorrectAnswers();
+    }
+    this.setState({
+      value: e.target.value,
+    });
+  }
 
   render() {
     const optionsList = this.props.options.map((option) => (
@@ -29,11 +29,9 @@ export class Riddle extends React.Component {
       <div>
         <label htmlFor={this.props.id}>{this.props.question}</label>
         <select
-          // value={this.state.value}
-          // onChange={this.handleChange}
+          onChange={this.handleChange}
           name={this.props.id}
           id={this.props.id}
-          // key={this.props.id}
           size={this.props.options.length}
           required
         >
@@ -44,5 +42,3 @@ export class Riddle extends React.Component {
     );
   }
 }
-
-// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio

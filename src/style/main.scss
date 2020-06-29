@@ -1,20 +1,79 @@
 @import "fonts";
 @import "variables";
 
+@import "header";
+@import "map";
+@import "form";
+@import "footer";
+
 body {
   margin: 0;
 }
 
+.App,
+button,
+select,
+input {
+  font-family: "Gloria Hallelujah", serif;
+  color: $black;
+}
+
+button {
+  cursor: pointer;
+}
+
 .App {
+  padding: 20px;
   color: $black;
   background: $ultralight;
   text-align: center;
-  font-family: "Gloria Hallelujah", serif;
-  font-size: 22px;
+  font-size: 21px;
+}
+
+.content {
+  max-width: 600px;
+  margin: auto;
 }
 
 .Intro {
-  margin-top: 15vh;
+  margin-top: 10vh;
+  .instructions {
+    margin: 30px auto 45px auto;
+  }
+}
+
+.inline-button {
+  font-size: inherit;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.big-button {
+  font-size: inherit;
+  padding: 5px 45px;
+}
+
+.outline-button {
+  background: none;
+  border: solid 3px;
+  &:hover {
+    background: $black;
+    color: #fff;
+  }
+}
+
+.fill-button {
+  border: none;
+  background: $primary;
+  color: #fff;
+  box-shadow: none;
+  transition: transform 0.2s, box-shadow 0.1s;
+  &:hover {
+    box-shadow: rgba($black, 0.3) 1px 2px 4px;
+    transform: translateY(-2px);
+  }
 }
 
 h1 {
@@ -24,4 +83,14 @@ h1 {
   margin: 15px 0;
   font-family: "Impact", sans-serif;
   text-transform: uppercase;
+}
+
+.vertical-line {
+  height: 150px;
+  width: 1px;
+  margin: 45px auto;
+  background-image: linear-gradient(black 33%, rgba(255, 255, 255, 0) 0%);
+  background-position: right;
+  background-size: 1px 30px;
+  background-repeat: repeat-y;
 }

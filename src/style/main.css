@@ -12,20 +12,207 @@
   font-style: normal;
 }
 
+.inline-button.print-button {
+  font-size: 19px;
+  padding: 20px;
+}
+
+.fab {
+  z-index: 1;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 72px;
+  height: 72px;
+  background: #00263e;
+  border-radius: 99px;
+  -webkit-box-shadow: rgba(0, 38, 62, 0.25) 0 2px 4px;
+          box-shadow: rgba(0, 38, 62, 0.25) 0 2px 4px;
+}
+
+.fab svg {
+  margin-top: -1px;
+  width: 42px;
+  height: 42px;
+  fill: white;
+}
+
+form {
+  margin-bottom: 150px;
+}
+
+form select {
+  width: 100%;
+  display: block;
+  font-size: inherit;
+  background: none;
+  border: none;
+}
+
+form select:focus {
+  outline: 0;
+  border: none;
+}
+
+form select option {
+  position: relative;
+  cursor: pointer;
+  border-radius: 99px;
+  -webkit-box-shadow: 0 0 10px 100px #f3e1c4 inset;
+          box-shadow: 0 0 10px 100px #f3e1c4 inset;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  margin: 10px auto;
+  border: solid transparent 3px;
+}
+
+form select option:hover {
+  opacity: 0.8;
+}
+
+form select option:checked {
+  border: solid #00b9cd 3px;
+}
+
+form select option:checked:hover {
+  opacity: 1;
+}
+
+form img {
+  display: block;
+  margin: 45px auto;
+}
+
+form input {
+  cursor: pointer;
+}
+
+footer {
+  font-size: 17px;
+  margin-bottom: 120px;
+}
+
+footer .like-counter {
+  margin-bottom: 45px;
+}
+
+footer .like-counter button {
+  display: block;
+  margin: auto;
+  padding: 0 15px;
+  background: none;
+  border: none;
+}
+
+footer .like-counter button svg {
+  width: 36px;
+  height: 36px;
+}
+
+footer .like-counter button .heart-border {
+  fill: #00263e;
+}
+
+footer .like-counter button .heart-fill {
+  fill: #e74c3c;
+  display: none;
+}
+
+footer .attribution {
+  color: #80929e;
+}
+
+footer .attribution a {
+  color: inherit;
+}
+
 body {
   margin: 0;
 }
 
+.App,
+button,
+select,
+input {
+  font-family: "Gloria Hallelujah", serif;
+  color: #00263e;
+}
+
+button {
+  cursor: pointer;
+}
+
 .App {
+  padding: 20px;
   color: #00263e;
   background: #f7f5ec;
   text-align: center;
-  font-family: "Gloria Hallelujah", serif;
-  font-size: 22px;
+  font-size: 21px;
+}
+
+.content {
+  max-width: 600px;
+  margin: auto;
 }
 
 .Intro {
-  margin-top: 15vh;
+  margin-top: 10vh;
+}
+
+.Intro .instructions {
+  margin: 30px auto 45px auto;
+}
+
+.inline-button {
+  font-size: inherit;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.big-button {
+  font-size: inherit;
+  padding: 5px 45px;
+}
+
+.outline-button {
+  background: none;
+  border: solid 3px;
+}
+
+.outline-button:hover {
+  background: #00263e;
+  color: #fff;
+}
+
+.fill-button {
+  border: none;
+  background: #00b9cd;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.1s;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.1s;
+  transition: transform 0.2s, box-shadow 0.1s;
+  transition: transform 0.2s, box-shadow 0.1s, -webkit-transform 0.2s, -webkit-box-shadow 0.1s;
+}
+
+.fill-button:hover {
+  -webkit-box-shadow: rgba(0, 38, 62, 0.3) 1px 2px 4px;
+          box-shadow: rgba(0, 38, 62, 0.3) 1px 2px 4px;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 
 h1 {
@@ -35,5 +222,16 @@ h1 {
   margin: 15px 0;
   font-family: "Impact", sans-serif;
   text-transform: uppercase;
+}
+
+.vertical-line {
+  height: 150px;
+  width: 1px;
+  margin: 45px auto;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(33%, black), color-stop(0%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(black 33%, rgba(255, 255, 255, 0) 0%);
+  background-position: right;
+  background-size: 1px 30px;
+  background-repeat: repeat-y;
 }
 /*# sourceMappingURL=main.css.map */

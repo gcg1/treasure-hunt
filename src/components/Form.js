@@ -1,6 +1,7 @@
 import React from "react";
 import chest from "../assets/treasure-chest.svg";
 import { Riddle } from "./Riddle";
+// import fanfare from "../assets/sounds/fanfare.mp3";
 
 export class Form extends React.Component {
   constructor(props) {
@@ -38,8 +39,9 @@ export class Form extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.correctAnswers == this.state.riddles.length) {
-      alert("Congratulations! You answered all questions correctly.");
+    if (this.state.correctAnswers === this.state.riddles.length) {
+      document.getElementsByClassName("fanfare")[0].play();
+      // alert("Congratulations! You answered all questions correctly.");
     } else {
       alert("One or more answers are incorrect :(");
     }
@@ -60,8 +62,13 @@ export class Form extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         {riddlesList}
+        <div className="vertical-line"></div>
         <img src={chest} alt="Treasure Chest" />
-        <input type="submit" value="Check your answers" />
+        <input
+          className="big-button fill-button"
+          type="submit"
+          value="Check your answers"
+        />
       </form>
     );
   }

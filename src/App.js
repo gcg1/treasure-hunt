@@ -1,5 +1,6 @@
 import React from "react";
 import "./style/main.css";
+import { Audio } from "./components/Audio";
 import { MapFAB } from "./components/MapFAB";
 import { Header } from "./components/Header";
 import { Intro } from "./components/Intro";
@@ -9,11 +10,14 @@ import { Footer } from "./components/Footer";
 function App() {
   return (
     <div className="App">
-      <MapFAB />
-      <Header />
-      <Intro />
-      <Form />
-      <Footer />
+      <div className="content">
+        <Audio />
+        <MapFAB />
+        <Header />
+        <Intro />
+        <Form />
+        <Footer />
+      </div>
     </div>
   );
 }

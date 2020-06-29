@@ -1,0 +1,33 @@
+@import "variables";
+
+footer {
+  font-size: 17px;
+  margin-bottom: 120px;
+  .like-counter {
+    margin-bottom: 45px;
+    button {
+      display: block;
+      margin: auto;
+      padding: 0 15px;
+      background: none;
+      border: none;
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+      .heart-border {
+        fill: $black;
+      }
+      .heart-fill {
+        fill: $red;
+        display: none;
+      }
+    }
+  }
+  .attribution {
+    color: $lightGrey;
+    a {
+      color: inherit;
+    }
+  }
+}

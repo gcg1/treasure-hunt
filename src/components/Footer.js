@@ -6,16 +6,18 @@ export class Footer extends React.Component {
     return (
       <footer>
         <Likes />
-        <span>
-          by{" "}
-          <a
-            href="https://www.friendsofmorleypark.org.uk/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Friends of Morley Park
-          </a>
-        </span>
+        <div className="attribution">
+          <span>
+            by{" "}
+            <a
+              href="https://www.friendsofmorleypark.org.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Friends of Morley Park
+            </a>
+          </span>
+        </div>
       </footer>
     );
   }

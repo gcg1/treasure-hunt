@@ -1,0 +1,22 @@
+.fab {
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 72px;
+  height: 72px;
+  background: $black;
+  border-radius: 99px;
+  box-shadow: rgba($black, 0.25) 0 2px 4px;
+
+  svg {
+    margin-top: -1px;
+    width: 42px;
+    height: 42px;
+    fill: white;
+  }
+}

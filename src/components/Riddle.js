@@ -27,12 +27,13 @@ export class Riddle extends React.Component {
 
     return (
       <div>
+        <div className="vertical-line"></div>
         <label htmlFor={this.props.id}>{this.props.question}</label>
         <select
           onChange={this.handleChange}
           name={this.props.id}
           id={this.props.id}
-          size={this.props.options.length}
+          size={this.props.options.length + 1}
           required
         >
           <option hidden disabled value></option>

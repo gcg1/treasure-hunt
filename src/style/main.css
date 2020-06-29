@@ -12,6 +12,38 @@
   font-style: normal;
 }
 
+@media print {
+  body .App {
+    font-size: 17px;
+  }
+  body .App .print-button,
+  body .App .big-button,
+  body .App .fab,
+  body .App .like-counter,
+  body .App .vertical-line {
+    display: none;
+  }
+  body .App .inline-button {
+    text-decoration: none;
+  }
+  body .App .Intro {
+    margin-top: 0;
+  }
+  body .App .inline-map {
+    display: block;
+  }
+  body .App form select option {
+    text-align: center;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  body .App form select option,
+  body .App form select option:checked {
+    background: none;
+    border: none;
+  }
+}
+
 .inline-button.print-button {
   font-size: 19px;
   padding: 20px;
@@ -45,6 +77,81 @@
   width: 42px;
   height: 42px;
   fill: white;
+}
+
+.fab.animating {
+  -webkit-animation-name: swell;
+          animation-name: swell;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes swell {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes swell {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.map-modal {
+  z-index: 2;
+  background: #f7f5ec;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-modal .map {
+  margin-top: 5%;
+  height: 85%;
+  max-width: 100%;
+}
+
+.map-modal .quit {
+  border: solid #00263e 2px;
+  border-radius: 99px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f7f5ec;
+}
+
+.map-modal .quit svg {
+  padding: 10px;
+  width: 32px;
+  height: 32px;
+  fill: #00263e;
 }
 
 form {
@@ -89,9 +196,155 @@ form select option:checked:hover {
   opacity: 1;
 }
 
-form img {
+form svg {
   display: block;
   margin: 45px auto;
+}
+
+form svg #lock {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  transform-box: fill-box;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: -webkit-transform 0.15s;
+  transition: -webkit-transform 0.15s;
+  transition: transform 0.15s;
+  transition: transform 0.15s, -webkit-transform 0.15s;
+}
+
+form svg #lock #lock-gap {
+  transform-box: fill-box;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  opacity: 0;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+  -webkit-transition: -webkit-transform 0.15s;
+  transition: -webkit-transform 0.15s;
+  transition: transform 0.15s;
+  transition: transform 0.15s, -webkit-transform 0.15s;
+}
+
+form svg #lock.animating {
+  -webkit-animation-name: swing;
+          animation-name: swing;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes swing {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  70% {
+    -webkit-transform: rotate(-6deg);
+            transform: rotate(-6deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes swing {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  30% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  70% {
+    -webkit-transform: rotate(-6deg);
+            transform: rotate(-6deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+form svg #lid-underside {
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+  transform-box: fill-box;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transition: -webkit-transform 1.5s ease;
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+form svg #gold-blur {
+  opacity: 0;
+  -webkit-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+form svg #chest-top {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  -webkit-transition: -webkit-transform 1.5s ease;
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+form svg #treasure-chest.unlocked #lid-underside {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+form svg #treasure-chest.unlocked #gold-blur {
+  opacity: 0.6;
+}
+
+form svg #treasure-chest.unlocked #chest-top {
+  -webkit-transform: rotateX(70deg);
+          transform: rotateX(70deg);
+}
+
+form svg #treasure-chest.unlocked #lock {
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+form svg #treasure-chest.unlocked #lock #lock-gap {
+  opacity: 1;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
 }
 
 form input {
@@ -104,7 +357,7 @@ footer {
 }
 
 footer .like-counter {
-  margin-bottom: 45px;
+  margin-bottom: 15px;
 }
 
 footer .like-counter button {
@@ -178,6 +431,12 @@ button {
   margin: 30px auto 45px auto;
 }
 
+.inline-map {
+  width: 100%;
+  margin: 45px auto;
+  display: none;
+}
+
 .inline-button {
   font-size: inherit;
   background: none;
@@ -207,8 +466,8 @@ button {
   border: none;
   background: #00b9cd;
   color: #fff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  -webkit-box-shadow: rgba(0, 38, 62, 0) 0 0;
+          box-shadow: rgba(0, 38, 62, 0) 0 0;
   -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.1s;
   transition: -webkit-transform 0.2s, -webkit-box-shadow 0.1s;
   transition: transform 0.2s, box-shadow 0.1s;
@@ -235,8 +494,8 @@ h1 {
   height: 150px;
   width: 1px;
   margin: 45px auto;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(33%, black), color-stop(0%, rgba(255, 255, 255, 0)));
-  background-image: linear-gradient(black 33%, rgba(255, 255, 255, 0) 0%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(33%, #00263e), color-stop(0%, rgba(0, 38, 62, 0)));
+  background-image: linear-gradient(#00263e 33%, rgba(0, 38, 62, 0) 0%);
   background-position: right;
   background-size: 1px 30px;
   background-repeat: repeat-y;

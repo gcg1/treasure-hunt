@@ -3,7 +3,10 @@ import React from "react";
 export class MapFAB extends React.Component {
   render() {
     return (
-      <div className="fab">
+      <div
+        onClick={this.props.toggleMap}
+        className={!this.props.animating ? "fab" : "fab animating"}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24"

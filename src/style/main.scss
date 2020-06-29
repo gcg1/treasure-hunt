@@ -1,6 +1,8 @@
 @import "fonts";
 @import "variables";
 
+@import "print";
+
 @import "header";
 @import "map";
 @import "form";
@@ -46,6 +48,12 @@ button {
   }
 }
 
+.inline-map {
+  width: 100%;
+  margin: 45px auto;
+  display: none;
+}
+
 .inline-button {
   font-size: inherit;
   background: none;
@@ -74,7 +82,7 @@ button {
   border: none;
   background: $primary;
   color: #fff;
-  box-shadow: none;
+  box-shadow: rgba($black, 0) 0 0;
   transition: transform 0.2s, box-shadow 0.1s;
   &:hover {
     box-shadow: rgba($black, 0.3) 1px 2px 4px;
@@ -95,7 +103,7 @@ h1 {
   height: 150px;
   width: 1px;
   margin: 45px auto;
-  background-image: linear-gradient(black 33%, rgba(255, 255, 255, 0) 0%);
+  background-image: linear-gradient($black 33%, rgba($black, 0) 0%);
   background-position: right;
   background-size: 1px 30px;
   background-repeat: repeat-y;

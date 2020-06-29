@@ -1,0 +1,36 @@
+@media print {
+  body {
+    .App {
+      font-size: 17px;
+      .print-button,
+      .big-button,
+      .fab,
+      .like-counter,
+      .vertical-line {
+        display: none;
+      }
+      .inline-button {
+        text-decoration: none;
+      }
+      .Intro {
+        margin-top: 0;
+      }
+      .inline-map {
+        display: block;
+      }
+      form {
+        select {
+          option {
+            text-align: center;
+            box-shadow: none;
+          }
+          option,
+          option:checked {
+            background: none;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

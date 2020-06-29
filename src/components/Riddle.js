@@ -28,7 +28,9 @@ export class Riddle extends React.Component {
     return (
       <div>
         <div className="vertical-line"></div>
-        <label htmlFor={this.props.id}>{this.props.question}</label>
+        <label htmlFor={this.props.id}>
+          {this.props.questionNumber + 1}. {this.props.question}
+        </label>
         <select
           onChange={this.handleChange}
           name={this.props.id}

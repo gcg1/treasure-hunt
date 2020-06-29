@@ -1,5 +1,5 @@
 import React from "react";
-import chest from "../treasure-chest.svg";
+import chest from "../assets/treasure-chest.svg";
 import { Riddle } from "./Riddle";
 
 export class Form extends React.Component {
@@ -38,9 +38,6 @@ export class Form extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // if ("Some questions haven't been answered") {
-    //   alert("You haven't answered all the questions.");
-    // } else
     if (this.state.correctAnswers == this.state.riddles.length) {
       alert("Congratulations! You answered all questions correctly.");
     } else {

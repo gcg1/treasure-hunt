@@ -1,0 +1,27 @@
+@import "fonts";
+@import "variables";
+
+body {
+  margin: 0;
+}
+
+.App {
+  color: $black;
+  background: $ultralight;
+  text-align: center;
+  font-family: "Gloria Hallelujah", serif;
+  font-size: 22px;
+}
+
+.Intro {
+  margin-top: 15vh;
+}
+
+h1 {
+  font-size: 73px;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin: 15px 0;
+  font-family: "Impact", sans-serif;
+  text-transform: uppercase;
+}

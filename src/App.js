@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./style/main.css";
 import { MapFAB } from "./components/MapFAB";
 import { Header } from "./components/Header";
 import { Intro } from "./components/Intro";

@@ -1,7 +1,7 @@
 @import "variables";
 
 form {
-  margin-bottom: 150px;
+  margin-bottom: 25vh;
   select {
     width: 100%;
     display: block;
@@ -28,6 +28,7 @@ form {
     }
     option:checked {
       border: solid $primary 3px;
+      box-shadow: 0 0 10px 100px $primary inset;
       &:hover {
         opacity: 1;
       }
@@ -115,5 +116,28 @@ form {
   }
   input {
     cursor: pointer;
+    -webkit-appearance: none;
+  }
+}
+
+.App.dark {
+  form {
+    select {
+      pointer-events: none;
+      option {
+        color: #fff;
+        box-shadow: 0 0 10px 100px $primary inset;
+      }
+      option:checked {
+        color: #fff !important;
+        box-shadow: 0 0 10px 100px $primary inset;
+      }
+      option:not(:checked) {
+        opacity: 0.4;
+      }
+    }
+    input {
+      pointer-events: none;
+    }
   }
 }

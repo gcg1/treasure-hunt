@@ -4,6 +4,7 @@
 @import "print";
 
 @import "header";
+@import "confetti";
 @import "map";
 @import "form";
 @import "footer";
@@ -26,14 +27,32 @@ input {
 
 button {
   cursor: pointer;
+  color: inherit;
+}
+
+.big-button {
+  opacity: 1;
+  transition: opacity 0.15s;
 }
 
 .App {
   padding: 20px;
   color: $black;
-  background: $ultralight;
+  background-color: $ultralight;
   text-align: center;
   font-size: 21px;
+  transition: background-color 0.6s, color 0.6s;
+}
+
+.App.dark {
+  background-color: $black;
+  color: #fff;
+  .vertical-line {
+    background-image: linear-gradient($lightGrey 33%, rgba($lightGrey, 0) 0%);
+  }
+  .fill-button {
+    background: $black;
+  }
 }
 
 .content {
@@ -83,7 +102,7 @@ button {
   background: $primary;
   color: #fff;
   box-shadow: rgba($black, 0) 0 0;
-  transition: transform 0.2s, box-shadow 0.1s;
+  transition: transform 0.2s, box-shadow 0.6s;
   &:hover {
     box-shadow: rgba($black, 0.3) 1px 2px 4px;
     transform: translateY(-2px);
@@ -101,10 +120,11 @@ h1 {
 
 .vertical-line {
   height: 150px;
-  width: 1px;
+  width: 3px;
   margin: 45px auto;
   background-image: linear-gradient($black 33%, rgba($black, 0) 0%);
   background-position: right;
-  background-size: 1px 30px;
+  background-size: 3px 30px;
   background-repeat: repeat-y;
+  transition: background-image 0.6s;
 }

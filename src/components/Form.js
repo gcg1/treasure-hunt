@@ -1,6 +1,5 @@
 import React from "react";
 import { Riddle } from "./Riddle";
-// import fanfare from "../assets/sounds/fanfare.mp3";
 
 export class Form extends React.Component {
   constructor(props) {
@@ -10,12 +9,12 @@ export class Form extends React.Component {
       riddles: [
         {
           id: "latin",
-          question: "What's the latin motto?",
+          question: "Which latin motto is on the pavilion doors?",
           options: ["Serviam", "Meliora", "Emeritus", "Apricus"],
         },
         {
           id: "flowers",
-          question: "What colour flower can't you find?",
+          question: "What colour flower can't you find in the park?",
           options: ["Red", "Yellow", "White", "Purple"],
         },
       ],
@@ -38,20 +37,29 @@ export class Form extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.totalAnswers < this.state.riddles.length) {
-      document.getElementById("lock").classList.add("animating");
-      setTimeout(
-        () => document.getElementById("lock").classList.remove("animating"),
-        500
-      );
-      document.getElementsByClassName("locked")[0].play();
-    } else if (this.state.correctAnswers === this.state.riddles.length) {
+    // if (this.state.totalAnswers < this.state.riddles.length) {
+    //   document.getElementById("lock").classList.add("animating");
+    //   setTimeout(
+    //     () => document.getElementById("lock").classList.remove("animating"),
+    //     500
+    //   );
+    //   document.getElementsByClassName("locked")[0].play();
+    // } else
+    if (this.state.correctAnswers === this.state.riddles.length) {
+      this.props.toggleSuccess();
+      document.getElementsByClassName("creak")[0].play();
       document.getElementsByClassName("fanfare")[0].play();
+      document.getElementsByClassName("App")[0].classList.add("dark");
+      setTimeout(
+        () =>
+          document.getElementById("treasure-chest").classList.add("unlocked"),
+        600
+      );
     } else {
       document.getElementsByClassName("locked")[0].play();
       setTimeout(
         () => document.getElementsByClassName("ohdear")[0].play(),
-        350
+        300
       );
       document.getElementById("lock").classList.add("animating");
       setTimeout(
@@ -123,7 +131,7 @@ export class Form extends React.Component {
                     rx="91.5"
                     ry="42"
                     fill="#FDB62F"
-                    fill-opacity="0.6"
+                    fillOpacity="0.6"
                   />
                 </g>
               </g>
@@ -300,8 +308,8 @@ export class Form extends React.Component {
             <g id="lock">
               <path
                 id="Group"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M131.062 114.688H134.25C136.01 114.688 137.438 116.116 137.438 117.875V143.375C137.438 145.134 136.01 146.562 134.25 146.562H108.75C106.991 146.562 105.562 145.134 105.562 143.375V117.875C105.562 116.116 106.991 114.688 108.75 114.688H111.938V111.5C111.938 106.228 116.228 101.938 121.5 101.938C126.772 101.938 131.062 106.228 131.062 111.5V114.688ZM121.5 108.312C119.744 108.312 118.312 109.744 118.312 111.5V114.688H124.688V111.5C124.688 109.744 123.256 108.312 121.5 108.312ZM121.5 124.25C123.26 124.25 124.688 125.678 124.688 127.438C124.688 128.559 124.072 129.5 123.196 130.07V140.146H119.807V130.07C118.928 129.503 118.312 128.563 118.312 127.438C118.312 125.678 119.741 124.25 121.5 124.25Z"
                 fill="#FDB62F"
               />
@@ -323,9 +331,9 @@ export class Form extends React.Component {
               width="185"
               height="100"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -344,9 +352,9 @@ export class Form extends React.Component {
               width="243"
               height="144"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -364,7 +372,9 @@ export class Form extends React.Component {
         <input
           className="big-button fill-button"
           type="submit"
-          value="Check your answers"
+          value={
+            !this.props.success ? "Check your answers" : "Congratulations!"
+          }
         />
       </form>
     );

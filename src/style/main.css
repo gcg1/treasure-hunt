@@ -49,6 +49,11 @@
   padding: 20px;
 }
 
+.App .content canvas {
+  position: fixed !important;
+  height: 100vh;
+}
+
 .fab {
   z-index: 1;
   cursor: pointer;
@@ -66,10 +71,12 @@
   right: 20px;
   width: 72px;
   height: 72px;
-  background: #00263e;
+  background-color: #00263e;
   border-radius: 99px;
   -webkit-box-shadow: rgba(0, 38, 62, 0.25) 0 2px 4px;
           box-shadow: rgba(0, 38, 62, 0.25) 0 2px 4px;
+  -webkit-transition: background-color 0.6s;
+  transition: background-color 0.6s;
 }
 
 .fab svg {
@@ -77,6 +84,16 @@
   width: 42px;
   height: 42px;
   fill: white;
+  -webkit-transition: fill 0.6s;
+  transition: fill 0.6s;
+}
+
+.App.dark .fab {
+  background-color: #80929e;
+}
+
+.App.dark .fab svg {
+  fill: #00263e;
 }
 
 .fab.animating {
@@ -155,7 +172,7 @@
 }
 
 form {
-  margin-bottom: 150px;
+  margin-bottom: 25vh;
 }
 
 form select {
@@ -190,6 +207,8 @@ form select option:hover {
 
 form select option:checked {
   border: solid #00b9cd 3px;
+  -webkit-box-shadow: 0 0 10px 100px #00b9cd inset;
+          box-shadow: 0 0 10px 100px #00b9cd inset;
 }
 
 form select option:checked:hover {
@@ -349,6 +368,31 @@ form svg #treasure-chest.unlocked #lock #lock-gap {
 
 form input {
   cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.App.dark form select {
+  pointer-events: none;
+}
+
+.App.dark form select option {
+  color: #fff;
+  -webkit-box-shadow: 0 0 10px 100px #00b9cd inset;
+          box-shadow: 0 0 10px 100px #00b9cd inset;
+}
+
+.App.dark form select option:checked {
+  color: #fff !important;
+  -webkit-box-shadow: 0 0 10px 100px #00b9cd inset;
+          box-shadow: 0 0 10px 100px #00b9cd inset;
+}
+
+.App.dark form select option:not(:checked) {
+  opacity: 0.4;
+}
+
+.App.dark form input {
+  pointer-events: none;
 }
 
 footer {
@@ -390,6 +434,12 @@ footer .attribution a {
   color: inherit;
 }
 
+@media (min-width: 440px) {
+  footer {
+    margin-bottom: 15px;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -408,14 +458,37 @@ input {
 
 button {
   cursor: pointer;
+  color: inherit;
+}
+
+.big-button {
+  opacity: 1;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
 }
 
 .App {
   padding: 20px;
   color: #00263e;
-  background: #f7f5ec;
+  background-color: #f7f5ec;
   text-align: center;
   font-size: 21px;
+  -webkit-transition: background-color 0.6s, color 0.6s;
+  transition: background-color 0.6s, color 0.6s;
+}
+
+.App.dark {
+  background-color: #00263e;
+  color: #fff;
+}
+
+.App.dark .vertical-line {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(33%, #80929e), color-stop(0%, rgba(128, 146, 158, 0)));
+  background-image: linear-gradient(#80929e 33%, rgba(128, 146, 158, 0) 0%);
+}
+
+.App.dark .fill-button {
+  background: #00263e;
 }
 
 .content {
@@ -468,10 +541,10 @@ button {
   color: #fff;
   -webkit-box-shadow: rgba(0, 38, 62, 0) 0 0;
           box-shadow: rgba(0, 38, 62, 0) 0 0;
-  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.1s;
-  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.1s;
-  transition: transform 0.2s, box-shadow 0.1s;
-  transition: transform 0.2s, box-shadow 0.1s, -webkit-transform 0.2s, -webkit-box-shadow 0.1s;
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.6s;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.6s;
+  transition: transform 0.2s, box-shadow 0.6s;
+  transition: transform 0.2s, box-shadow 0.6s, -webkit-transform 0.2s, -webkit-box-shadow 0.6s;
 }
 
 .fill-button:hover {
@@ -492,12 +565,14 @@ h1 {
 
 .vertical-line {
   height: 150px;
-  width: 1px;
+  width: 3px;
   margin: 45px auto;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(33%, #00263e), color-stop(0%, rgba(0, 38, 62, 0)));
   background-image: linear-gradient(#00263e 33%, rgba(0, 38, 62, 0) 0%);
   background-position: right;
-  background-size: 1px 30px;
+  background-size: 3px 30px;
   background-repeat: repeat-y;
+  -webkit-transition: background-image 0.6s;
+  transition: background-image 0.6s;
 }
 /*# sourceMappingURL=main.css.map */

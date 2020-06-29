@@ -7,12 +7,14 @@ import { Header } from "./components/Header";
 import { Intro } from "./components/Intro";
 import { Form } from "./components/Form";
 import { Footer } from "./components/Footer";
+// import useWindowSize from "react-use/lib/useWindowSize";
+import Confetti from "react-confetti";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      darkMode: false,
+      success: false,
       mapMode: false,
       animatingFab: false,
       animatingChest: false,
@@ -21,6 +23,11 @@ class App extends React.Component {
 
     this.toggleMapMode = this.toggleMapMode.bind(this);
     this.swellFab = this.swellFab.bind(this);
+    this.toggleSuccess = this.toggleSuccess.bind(this);
+  }
+
+  toggleSuccess() {
+    this.setState({ success: true });
   }
 
   toggleMapMode() {
@@ -39,29 +46,25 @@ class App extends React.Component {
     !this.state.animatingFab && animate();
   }
 
-  // Goal: when "your map" button is clicked, the fab swells
-
-  // I can't just add/remove an animation class to the fab onClick, because React is dumb
-  // So, I have to...
-  // Add a special state "animatingFab: false" to App
-  //
-  // When "your map" button is clicked:
-  // it triggers an event handler (passed down by App via props)
-  // then the state change somehow (???) triggers the animation
-
   render() {
+    // const { width, height } = useWindowSize();
+
     return (
       <div className="App">
         <div className="content">
           <Audio />
           {this.state.mapMode ? <Map toggleMap={this.toggleMapMode} /> : null}
+          {this.state.success && <Confetti />}
           <MapFAB
             animating={this.state.animatingFab}
             toggleMap={this.toggleMapMode}
           />
           <Header />
           <Intro mapPrompt={this.swellFab} />
-          <Form />
+          <Form
+            toggleSuccess={this.toggleSuccess}
+            success={this.state.success}
+          />
           <Footer />
         </div>
       </div>

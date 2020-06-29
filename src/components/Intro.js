@@ -8,7 +8,7 @@ export class Intro extends React.Component {
         <span>FOMP's</span>
         <h1>Treasure Hunt</h1>
         <p className="instructions">
-          Answer 10 riddles around Morley Park to find the treasure. Check{" "}
+          Answer 10 riddles around Morley Park to unlock the treasure. Check{" "}
           <button className="inline-button" onClick={this.props.mapPrompt}>
             your map
           </button>{" "}

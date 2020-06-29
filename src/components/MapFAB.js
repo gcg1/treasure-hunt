@@ -1,6 +1,12 @@
 import React from "react";
 
 export class MapFAB extends React.Component {
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.animate();
+    }, 600);
+  }
+
   render() {
     return (
       <div

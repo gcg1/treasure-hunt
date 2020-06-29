@@ -22,7 +22,7 @@ class App extends React.Component {
     };
 
     this.toggleMapMode = this.toggleMapMode.bind(this);
-    this.swellFab = this.swellFab.bind(this);
+    this.promptFab = this.promptFab.bind(this);
     this.toggleSuccess = this.toggleSuccess.bind(this);
   }
 
@@ -36,7 +36,7 @@ class App extends React.Component {
       : this.setState({ mapMode: true });
   }
 
-  swellFab() {
+  promptFab() {
     const animate = () => {
       this.setState({ animatingFab: true });
       setTimeout(() => {
@@ -56,11 +56,12 @@ class App extends React.Component {
           {this.state.mapMode ? <Map toggleMap={this.toggleMapMode} /> : null}
           {this.state.success && <Confetti />}
           <MapFAB
+            animate={this.promptFab}
             animating={this.state.animatingFab}
             toggleMap={this.toggleMapMode}
           />
           <Header />
-          <Intro mapPrompt={this.swellFab} />
+          <Intro mapPrompt={this.promptFab} />
           <Form
             toggleSuccess={this.toggleSuccess}
             success={this.state.success}

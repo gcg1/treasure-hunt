@@ -9,7 +9,9 @@ export const Intro = () => {
         Answer 10 riddles around Morley Park to find the treasure. Check{" "}
         <button className="inline-button">your map</button> for clues.
       </p>
-      <button className="big-button outline-button">Start</button>
+      <a className="big-button outline-button" href="#form">
+        Start
+      </a>
     </div>
   );
 };

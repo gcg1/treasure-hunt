@@ -65,6 +65,7 @@ form select:focus {
 }
 
 form select option {
+  font-size: 18px;
   position: relative;
   cursor: pointer;
   border-radius: 99px;
@@ -136,6 +137,10 @@ footer .attribution a {
   color: inherit;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }
@@ -187,6 +192,8 @@ button {
 }
 
 .outline-button {
+  text-decoration: none;
+  color: inherit;
   background: none;
   border: solid 3px;
 }

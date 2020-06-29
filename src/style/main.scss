@@ -6,6 +6,10 @@
 @import "form";
 @import "footer";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }
@@ -56,6 +60,8 @@ button {
 }
 
 .outline-button {
+  text-decoration: none;
+  color: inherit;
   background: none;
   border: solid 3px;
   &:hover {

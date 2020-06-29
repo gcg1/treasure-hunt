@@ -60,7 +60,7 @@ export class Form extends React.Component {
     ));
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form id="form" onSubmit={this.handleSubmit}>
         {riddlesList}
         <div className="vertical-line"></div>
         <img src={chest} alt="Treasure Chest" />

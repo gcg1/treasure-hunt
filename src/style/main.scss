@@ -17,6 +17,10 @@ body {
   margin: 0;
 }
 
+p {
+  line-height: 1.5;
+}
+
 .App,
 button,
 select,
@@ -64,6 +68,9 @@ button {
   margin-top: 10vh;
   .instructions {
     margin: 30px auto 45px auto;
+    .inline-button {
+      line-height: inherit;
+    }
   }
 }
 
@@ -86,16 +93,16 @@ button {
   padding: 5px 45px;
 }
 
-.outline-button {
-  text-decoration: none;
-  color: inherit;
-  background: none;
-  border: solid 3px;
-  &:hover {
-    background: $black;
-    color: #fff;
-  }
-}
+// .outline-button {
+//   text-decoration: none;
+//   color: inherit;
+//   background: none;
+//   border: solid 3px;
+//   &:hover {
+//     background: $black;
+//     color: #fff;
+//   }
+// }
 
 .fill-button {
   border: none;
@@ -121,7 +128,7 @@ h1 {
 .vertical-line {
   height: 150px;
   width: 3px;
-  margin: 45px auto;
+  margin: 45px auto 30px;
   background-image: linear-gradient($black 33%, rgba($black, 0) 0%);
   background-position: right;
   background-size: 3px 30px;

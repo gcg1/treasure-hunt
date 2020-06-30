@@ -1,38 +1,28 @@
 @import "variables";
 
 form {
-  margin-bottom: 25vh;
-  select {
-    width: 100%;
+  max-width: 500px;
+  margin: 0 auto 25vh auto;
+  .riddle-question {
+    line-height: 1.5;
+  }
+  label {
+    cursor: pointer;
+    background-color: $light;
+    user-select: none;
     display: block;
-    font-size: inherit;
-    background: none;
-    border: none;
-    &:focus {
-      outline: 0;
-      border: none;
-    }
-    option {
-      font-size: 18px;
-      position: relative;
-      cursor: pointer;
-      border-radius: 99px;
-      box-shadow: 0 0 10px 100px $light inset;
-      padding: 10px 30px;
-      text-transform: uppercase;
-      margin: 10px auto;
-      border: solid transparent 3px;
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-    option:checked {
-      border: solid $primary 3px;
-      box-shadow: 0 0 10px 100px $primary inset;
-      &:hover {
-        opacity: 1;
-      }
-    }
+    margin: 15px 0;
+    padding: 7px;
+    border-radius: 99px;
+  }
+  input[type="radio"] {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    pointer-events: none;
+  }
+  input[type="radio"]:checked + label {
+    background-color: $primary;
   }
   svg {
     display: block;
@@ -114,29 +104,36 @@ form {
       }
     }
   }
-  input {
+  .big-button {
     cursor: pointer;
-    -webkit-appearance: none;
+    appearance: none;
   }
 }
 
 .App.dark {
   form {
-    select {
-      pointer-events: none;
-      option {
-        color: #fff;
-        box-shadow: 0 0 10px 100px $primary inset;
-      }
-      option:checked {
-        color: #fff !important;
-        box-shadow: 0 0 10px 100px $primary inset;
-      }
-      option:not(:checked) {
-        opacity: 0.4;
-      }
-    }
     input {
+      pointer-events: none;
+    }
+    input[type="radio"]:not(:checked) + label {
+      background-color: $primary;
+      opacity: 0.2;
+    }
+    // select {
+    //   pointer-events: none;
+    //   option {
+    //     color: #fff;
+    //     box-shadow: 0 0 10px 100px $primary inset;
+    //   }
+    //   option:checked {
+    //     color: #fff !important;
+    //     box-shadow: 0 0 10px 100px $primary inset;
+    //   }
+    //   option:not(:checked) {
+    //     opacity: 0.4;
+    //   }
+    // }
+    .big-button {
       pointer-events: none;
     }
   }

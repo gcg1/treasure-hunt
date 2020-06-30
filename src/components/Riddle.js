@@ -20,27 +20,25 @@ export class Riddle extends React.Component {
 
   render() {
     const optionsList = this.props.options.map((option) => (
-      <option key={option} value={option}>
-        {option}
-      </option>
+      <div key={option} onChange={this.handleChange}>
+        <input
+          required
+          type="radio"
+          id={option}
+          name={this.props.id}
+          value={option}
+        />
+        <label htmlFor={option}>{option}</label>
+      </div>
     ));
 
     return (
       <div>
         <div className="vertical-line"></div>
-        <label htmlFor={this.props.id}>
+        <p className="riddle-question">
           {this.props.questionNumber + 1}. {this.props.question}
-        </label>
-        <select
-          onChange={this.handleChange}
-          name={this.props.id}
-          id={this.props.id}
-          size={this.props.options.length + 1}
-          required
-        >
-          <option hidden disabled value></option>
-          {optionsList}
-        </select>
+        </p>
+        {optionsList}
       </div>
     );
   }

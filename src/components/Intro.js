@@ -14,9 +14,9 @@ export class Intro extends React.Component {
           </button>{" "}
           for clues.
         </p>
-        <a href="#form" className="big-button outline-button">
+        {/* <a href="#form" className="big-button outline-button">
           Start
-        </a>
+        </a> */}
         <img className="inline-map" src={map} alt="Treasure Map" />
       </div>
     );

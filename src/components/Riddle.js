@@ -3,7 +3,10 @@ import React from "react";
 export class Riddle extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "", answer: this.props.options[0] };
+    this.state = {
+      value: "",
+      answer: this.props.answer,
+    };
     this.handleChange = this.handleChange.bind(this);
   }
 

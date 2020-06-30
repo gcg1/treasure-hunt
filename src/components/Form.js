@@ -11,13 +11,16 @@ export class Form extends React.Component {
       riddles: [
         {
           id: "latin",
-          question: "Which latin motto is on the pavilion doors?",
+          question:
+            "Which Latin motto is written 4 times on the doors of a building?",
           options: ["Serviam", "Meliora", "Emeritus", "Apricus"],
+          answer: "Serviam",
         },
         {
           id: "flowers",
-          question: "What colour flower can't you find in the park?",
-          options: ["Red", "Yellow", "White", "Purple"],
+          question: "How many bike rails in the bike shelter?",
+          options: ["8", "10", "12", "14"],
+          answer: "12",
         },
       ],
     };
@@ -90,6 +93,7 @@ export class Form extends React.Component {
         questionNumber={index}
         question={riddle.question}
         options={riddle.options}
+        answer={riddle.answer}
         incrementTotalAnswers={this.incrementTotalAnswers}
         incrementCorrectAnswers={this.incrementCorrectAnswers}
         decrementCorrectAnswers={this.decrementCorrectAnswers}

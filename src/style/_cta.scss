@@ -1,27 +1,52 @@
+@import "variables";
+
 .CTA {
+  h2 {
+    margin-bottom: 0;
+  }
+  p {
+    // font-size: 18px;
+    margin-top: 10px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
   input {
     font-size: inherit;
   }
   input[type="email"] {
+    color: #fff;
+    background-color: rgba($lightGrey, 0.3);
+    border: none;
+    border-radius: 99px;
     text-align: center;
-    padding: 0 15px;
+    padding: 7px;
     max-width: 100%;
     width: 400px;
     max-width: calc(100% - 40px);
     display: block;
-    margin: auto;
+    margin: 30px auto;
+    &::placeholder {
+      color: $lightGrey;
+    }
   }
-  input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-    vertical-align: middle;
-    margin-right: 5px;
+  .checkbox-wrapper {
+    user-select: none;
+    margin-bottom: 20px;
+    input[type="checkbox"] {
+      // appearance: none;
+      color: $primary;
+      background-color: #fff;
+      width: 15px;
+      height: 15px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    label {
+      font-size: 15px;
+      margin-left: 3px;
+    }
   }
   input[type="submit"] {
     appearance: none;
-  }
-  label {
-    font-size: 15px;
-    margin-left: 3px;
   }
 }

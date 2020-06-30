@@ -373,18 +373,28 @@
   color: #e74c3c;
 }
 
-.App.dark form input {
+.App.dark .riddles input {
   pointer-events: none;
 }
 
-.App.dark form input[type="radio"]:not(:checked) + label {
+.App.dark .riddles input[type="radio"]:not(:checked) + label {
   background-color: #00b9cd;
   opacity: 0.2;
 }
 
-.App.dark form .big-button,
-.App.dark form .error-message {
+.App.dark .riddles .big-button,
+.App.dark .riddles .error-message {
   display: none;
+}
+
+.CTA h2 {
+  margin-bottom: 0;
+}
+
+.CTA p {
+  margin-top: 10px;
+  line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 .CTA input {
@@ -392,31 +402,61 @@
 }
 
 .CTA input[type="email"] {
+  color: #fff;
+  background-color: rgba(128, 146, 158, 0.3);
+  border: none;
+  border-radius: 99px;
   text-align: center;
-  padding: 0 15px;
+  padding: 7px;
   max-width: 100%;
   width: 400px;
   max-width: calc(100% - 40px);
   display: block;
-  margin: auto;
+  margin: 30px auto;
 }
 
-.CTA input[type="checkbox"] {
+.CTA input[type="email"]::-webkit-input-placeholder {
+  color: #80929e;
+}
+
+.CTA input[type="email"]:-ms-input-placeholder {
+  color: #80929e;
+}
+
+.CTA input[type="email"]::-ms-input-placeholder {
+  color: #80929e;
+}
+
+.CTA input[type="email"]::placeholder {
+  color: #80929e;
+}
+
+.CTA .checkbox-wrapper {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-bottom: 20px;
+}
+
+.CTA .checkbox-wrapper input[type="checkbox"] {
+  color: #00b9cd;
+  background-color: #fff;
   width: 15px;
   height: 15px;
   vertical-align: middle;
   margin-right: 5px;
 }
 
+.CTA .checkbox-wrapper label {
+  font-size: 15px;
+  margin-left: 3px;
+}
+
 .CTA input[type="submit"] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-}
-
-.CTA label {
-  font-size: 15px;
-  margin-left: 3px;
 }
 
 footer {
@@ -497,6 +537,7 @@ button {
 }
 
 .big-button {
+  cursor: pointer;
   opacity: 1;
   -webkit-transition: opacity 0.15s;
   transition: opacity 0.15s;
@@ -520,10 +561,6 @@ button {
 .App.dark .vertical-line {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(33%, #80929e), color-stop(0%, rgba(128, 146, 158, 0)));
   background-image: linear-gradient(#80929e 33%, rgba(128, 146, 158, 0) 0%);
-}
-
-.App.dark .fill-button {
-  background: #00263e;
 }
 
 .content {

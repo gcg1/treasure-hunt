@@ -66,7 +66,7 @@ class App extends React.Component {
             toggleSuccess={this.toggleSuccess}
             success={this.state.success}
           />
-          <CTA />
+          {this.state.success && <CTA />}
           <Footer />
         </div>
       </div>

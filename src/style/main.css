@@ -14,12 +14,12 @@
 
 @media print {
   body .App {
+    background-color: #fff;
     font-size: 17px;
   }
   body .App .print-button,
   body .App .big-button,
   body .App .fab,
-  body .App .like-counter,
   body .App .vertical-line {
     display: none;
   }
@@ -28,6 +28,9 @@
   }
   body .App .Intro {
     margin-top: 0;
+  }
+  body .App .Intro h1 {
+    font-size: 40px;
   }
   body .App .inline-map {
     display: block;
@@ -171,16 +174,16 @@
   fill: #00263e;
 }
 
-form {
+.riddles {
   max-width: 500px;
-  margin: 0 auto 25vh auto;
+  margin: auto;
 }
 
-form .riddle-question {
+.riddles .riddle-question {
   line-height: 1.5;
 }
 
-form label {
+.riddles label {
   cursor: pointer;
   background-color: #f3e1c4;
   -webkit-user-select: none;
@@ -193,23 +196,23 @@ form label {
   border-radius: 99px;
 }
 
-form input[type="radio"] {
+.riddles input[type="radio"] {
   opacity: 0;
   z-index: -1;
   position: absolute;
   pointer-events: none;
 }
 
-form input[type="radio"]:checked + label {
+.riddles input[type="radio"]:checked + label {
   background-color: #00b9cd;
 }
 
-form svg {
+.riddles svg {
   display: block;
   margin: 45px auto;
 }
 
-form svg #lock {
+.riddles svg #lock {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   transform-box: fill-box;
@@ -221,7 +224,7 @@ form svg #lock {
   transition: transform 0.15s, -webkit-transform 0.15s;
 }
 
-form svg #lock #lock-gap {
+.riddles svg #lock #lock-gap {
   transform-box: fill-box;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
@@ -234,7 +237,7 @@ form svg #lock #lock-gap {
   transition: transform 0.15s, -webkit-transform 0.15s;
 }
 
-form svg #lock.animating {
+.riddles svg #lock.animating {
   -webkit-animation-name: swing;
           animation-name: swing;
   -webkit-animation-duration: 0.5s;
@@ -297,7 +300,7 @@ form svg #lock.animating {
   }
 }
 
-form svg #lid-underside {
+.riddles svg #lid-underside {
   -webkit-transform: rotateX(90deg);
           transform: rotateX(90deg);
   transform-box: fill-box;
@@ -311,7 +314,7 @@ form svg #lid-underside {
           transition-delay: 0.15s;
 }
 
-form svg #gold-blur {
+.riddles svg #gold-blur {
   opacity: 0;
   -webkit-transition: opacity 1.5s;
   transition: opacity 1.5s;
@@ -319,7 +322,7 @@ form svg #gold-blur {
           transition-delay: 0.15s;
 }
 
-form svg #chest-top {
+.riddles svg #chest-top {
   -webkit-transform: rotateX(0);
           transform: rotateX(0);
   -webkit-transition: -webkit-transform 1.5s ease;
@@ -330,36 +333,44 @@ form svg #chest-top {
           transition-delay: 0.15s;
 }
 
-form svg #treasure-chest.unlocked #lid-underside {
+.riddles svg #treasure-chest.unlocked #lid-underside {
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
 }
 
-form svg #treasure-chest.unlocked #gold-blur {
+.riddles svg #treasure-chest.unlocked #gold-blur {
   opacity: 0.6;
 }
 
-form svg #treasure-chest.unlocked #chest-top {
+.riddles svg #treasure-chest.unlocked #chest-top {
   -webkit-transform: rotateX(70deg);
           transform: rotateX(70deg);
 }
 
-form svg #treasure-chest.unlocked #lock {
+.riddles svg #treasure-chest.unlocked #lock {
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
 }
 
-form svg #treasure-chest.unlocked #lock #lock-gap {
+.riddles svg #treasure-chest.unlocked #lock #lock-gap {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
 }
 
-form .big-button {
+.riddles .big-button {
   cursor: pointer;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.riddles .error-message {
+  margin-top: 5px;
+  height: 34px;
+  display: block;
+  font-size: 17px;
+  color: #e74c3c;
 }
 
 .App.dark form input {
@@ -371,13 +382,46 @@ form .big-button {
   opacity: 0.2;
 }
 
-.App.dark form .big-button {
-  pointer-events: none;
+.App.dark form .big-button,
+.App.dark form .error-message {
+  display: none;
+}
+
+.CTA input {
+  font-size: inherit;
+}
+
+.CTA input[type="email"] {
+  text-align: center;
+  padding: 0 15px;
+  max-width: 100%;
+  width: 400px;
+  max-width: calc(100% - 40px);
+  display: block;
+  margin: auto;
+}
+
+.CTA input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.CTA input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.CTA label {
+  font-size: 15px;
+  margin-left: 3px;
 }
 
 footer {
   font-size: 17px;
-  margin-bottom: 120px;
+  margin: 25vh auto 120px auto;
 }
 
 footer .like-counter {
@@ -408,6 +452,7 @@ footer .like-counter button .heart-fill {
 
 footer .attribution {
   color: #80929e;
+  line-height: 1.6;
 }
 
 footer .attribution a {
@@ -428,8 +473,14 @@ body {
   margin: 0;
 }
 
+h1,
+h2 {
+  font-family: "Impact", sans-serif;
+  text-transform: uppercase;
+}
+
 p {
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .App,
@@ -484,6 +535,13 @@ button {
   margin-top: 10vh;
 }
 
+.Intro h1 {
+  font-size: 73px;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin: 15px 0;
+}
+
 .Intro .instructions {
   margin: 30px auto 45px auto;
 }
@@ -517,26 +575,17 @@ button {
   color: #fff;
   -webkit-box-shadow: rgba(0, 38, 62, 0) 0 0;
           box-shadow: rgba(0, 38, 62, 0) 0 0;
-  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.6s;
-  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.6s;
-  transition: transform 0.2s, box-shadow 0.6s;
-  transition: transform 0.2s, box-shadow 0.6s, -webkit-transform 0.2s, -webkit-box-shadow 0.6s;
+  -webkit-transition: -webkit-transform 0.15s, -webkit-box-shadow 0.15s;
+  transition: -webkit-transform 0.15s, -webkit-box-shadow 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s, -webkit-transform 0.15s, -webkit-box-shadow 0.15s;
 }
 
 .fill-button:hover {
-  -webkit-box-shadow: rgba(0, 38, 62, 0.3) 1px 2px 4px;
-          box-shadow: rgba(0, 38, 62, 0.3) 1px 2px 4px;
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
-}
-
-h1 {
-  font-size: 73px;
-  letter-spacing: -0.5px;
-  line-height: 1;
-  margin: 15px 0;
-  font-family: "Impact", sans-serif;
-  text-transform: uppercase;
+  -webkit-box-shadow: rgba(0, 38, 62, 0.3) 1px 2px 3px;
+          box-shadow: rgba(0, 38, 62, 0.3) 1px 2px 3px;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .vertical-line {

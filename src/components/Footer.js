@@ -1,5 +1,5 @@
 import React from "react";
-import { Likes } from "./Likes";
+// import { Likes } from "./Likes";
 
 export class Footer extends React.Component {
   render() {

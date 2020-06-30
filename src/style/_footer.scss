@@ -2,7 +2,7 @@
 
 footer {
   font-size: 17px;
-  margin-bottom: 120px;
+  margin: 25vh auto 120px auto;
   .like-counter {
     margin-bottom: 15px;
     button {
@@ -26,6 +26,7 @@ footer {
   }
   .attribution {
     color: $lightGrey;
+    line-height: 1.6;
     a {
       color: inherit;
     }

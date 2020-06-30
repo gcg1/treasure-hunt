@@ -5,7 +5,9 @@ export class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      totalAnswers: 0,
       correctAnswers: 0,
+      error: "",
       riddles: [
         {
           id: "latin",
@@ -20,9 +22,16 @@ export class Form extends React.Component {
       ],
     };
 
+    this.incrementTotalAnswers = this.incrementTotalAnswers.bind(this);
     this.incrementCorrectAnswers = this.incrementCorrectAnswers.bind(this);
     this.decrementCorrectAnswers = this.decrementCorrectAnswers.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.removeError = this.removeError.bind(this);
+  }
+
+  incrementTotalAnswers() {
+    const updatedTotalAnswers = this.state.totalAnswers + 1;
+    this.setState({ totalAnswers: updatedTotalAnswers });
   }
 
   incrementCorrectAnswers() {
@@ -35,37 +44,41 @@ export class Form extends React.Component {
     this.setState({ correctAnswers: updatedCorrectAnswers });
   }
 
+  failureAnimation() {
+    document.getElementsByClassName("locked")[0].play();
+    setTimeout(() => document.getElementsByClassName("ohdear")[0].play(), 300);
+    document.getElementById("lock").classList.add("animating");
+    setTimeout(
+      () => document.getElementById("lock").classList.remove("animating"),
+      500
+    );
+  }
+
+  successTransition() {
+    this.props.toggleSuccess();
+    document.getElementsByClassName("creak")[0].play();
+    document.getElementsByClassName("fanfare")[0].play();
+    document.getElementsByClassName("App")[0].classList.add("dark");
+    setTimeout(
+      () => document.getElementById("treasure-chest").classList.add("unlocked"),
+      600
+    );
+  }
+
+  removeError() {
+    this.state.error.length > 0 && this.setState({ error: "" });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    // if (this.state.totalAnswers < this.state.riddles.length) {
-    //   document.getElementById("lock").classList.add("animating");
-    //   setTimeout(
-    //     () => document.getElementById("lock").classList.remove("animating"),
-    //     500
-    //   );
-    //   document.getElementsByClassName("locked")[0].play();
-    // } else
-    if (this.state.correctAnswers === this.state.riddles.length) {
-      this.props.toggleSuccess();
-      document.getElementsByClassName("creak")[0].play();
-      document.getElementsByClassName("fanfare")[0].play();
-      document.getElementsByClassName("App")[0].classList.add("dark");
-      setTimeout(
-        () =>
-          document.getElementById("treasure-chest").classList.add("unlocked"),
-        600
-      );
+    if (this.state.totalAnswers < this.state.riddles.length) {
+      this.setState({ error: "Have you answered ALL the questions?" });
+      this.failureAnimation();
+    } else if (this.state.correctAnswers === this.state.riddles.length) {
+      this.successTransition();
     } else {
-      document.getElementsByClassName("locked")[0].play();
-      setTimeout(
-        () => document.getElementsByClassName("ohdear")[0].play(),
-        300
-      );
-      document.getElementById("lock").classList.add("animating");
-      setTimeout(
-        () => document.getElementById("lock").classList.remove("animating"),
-        500
-      );
+      this.setState({ error: "Not quite right... try again!" });
+      this.failureAnimation();
     }
   }
 
@@ -77,13 +90,14 @@ export class Form extends React.Component {
         questionNumber={index}
         question={riddle.question}
         options={riddle.options}
+        incrementTotalAnswers={this.incrementTotalAnswers}
         incrementCorrectAnswers={this.incrementCorrectAnswers}
         decrementCorrectAnswers={this.decrementCorrectAnswers}
       />
     ));
 
     return (
-      <form id="form" onSubmit={this.handleSubmit}>
+      <form className="riddles" onChange={this.removeError}>
         {riddlesList}
         <div className="vertical-line"></div>
 
@@ -372,10 +386,10 @@ export class Form extends React.Component {
         <input
           className="big-button fill-button"
           type="submit"
-          value={
-            !this.props.success ? "Check your answers" : "Congratulations!"
-          }
+          onClick={this.handleSubmit}
+          value="Check your answers"
         />
+        <span className="error-message">{this.state.error}</span>
       </form>
     );
   }

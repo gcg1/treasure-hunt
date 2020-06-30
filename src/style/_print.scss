@@ -1,11 +1,11 @@
 @media print {
   body {
     .App {
+      background-color: #fff;
       font-size: 17px;
       .print-button,
       .big-button,
       .fab,
-      .like-counter,
       .vertical-line {
         display: none;
       }
@@ -13,6 +13,9 @@
         text-decoration: none;
       }
       .Intro {
+        h1 {
+          font-size: 40px;
+        }
         margin-top: 0;
       }
       .inline-map {

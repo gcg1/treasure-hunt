@@ -1,0 +1,27 @@
+.CTA {
+  input {
+    font-size: inherit;
+  }
+  input[type="email"] {
+    text-align: center;
+    padding: 0 15px;
+    max-width: 100%;
+    width: 400px;
+    max-width: calc(100% - 40px);
+    display: block;
+    margin: auto;
+  }
+  input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  input[type="submit"] {
+    appearance: none;
+  }
+  label {
+    font-size: 15px;
+    margin-left: 3px;
+  }
+}

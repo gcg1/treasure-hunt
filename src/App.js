@@ -6,8 +6,8 @@ import { MapFAB } from "./components/MapFAB";
 import { Header } from "./components/Header";
 import { Intro } from "./components/Intro";
 import { Form } from "./components/Form";
+import { CTA } from "./components/CTA";
 import { Footer } from "./components/Footer";
-// import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
 
 class App extends React.Component {
@@ -66,6 +66,7 @@ class App extends React.Component {
             toggleSuccess={this.toggleSuccess}
             success={this.state.success}
           />
+          <CTA />
           <Footer />
         </div>
       </div>

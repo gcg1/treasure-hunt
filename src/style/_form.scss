@@ -1,8 +1,8 @@
 @import "variables";
 
-form {
+.riddles {
   max-width: 500px;
-  margin: 0 auto 25vh auto;
+  margin: auto;
   .riddle-question {
     line-height: 1.5;
   }
@@ -108,6 +108,13 @@ form {
     cursor: pointer;
     appearance: none;
   }
+  .error-message {
+    margin-top: 5px;
+    height: 34px;
+    display: block;
+    font-size: 17px;
+    color: $red;
+  }
 }
 
 .App.dark {
@@ -119,22 +126,11 @@ form {
       background-color: $primary;
       opacity: 0.2;
     }
-    // select {
-    //   pointer-events: none;
-    //   option {
-    //     color: #fff;
-    //     box-shadow: 0 0 10px 100px $primary inset;
-    //   }
-    //   option:checked {
-    //     color: #fff !important;
-    //     box-shadow: 0 0 10px 100px $primary inset;
-    //   }
-    //   option:not(:checked) {
-    //     opacity: 0.4;
-    //   }
-    // }
-    .big-button {
-      pointer-events: none;
+    .big-button,
+    .error-message {
+      // pointer-events: none;
+      // outline: none;
+      display: none;
     }
   }
 }

@@ -8,6 +8,9 @@ export class Riddle extends React.Component {
   }
 
   handleChange(e) {
+    if (this.state.value.length === 0) {
+      this.props.incrementTotalAnswers();
+    }
     if (e.target.value === this.state.answer) {
       this.props.incrementCorrectAnswers();
     } else if (this.state.value === this.state.answer) {

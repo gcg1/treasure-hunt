@@ -1,5 +1,12 @@
 @import "variables";
 
+.fab-arrow {
+  pointer-events: none;
+  position: fixed;
+  bottom: 90px;
+  right: 90px;
+}
+
 .fab {
   z-index: 1;
   cursor: pointer;

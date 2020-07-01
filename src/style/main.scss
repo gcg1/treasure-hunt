@@ -59,12 +59,6 @@ button {
 .App.dark {
   background-color: $black;
   color: #fff;
-  .vertical-line {
-    background-image: linear-gradient($lightGrey 33%, rgba($lightGrey, 0) 0%);
-  }
-  // .fill-button {
-  //   background: $black;
-  // }
 }
 
 .content {
@@ -73,7 +67,7 @@ button {
 }
 
 .Intro {
-  margin-top: 20vh;
+  margin-top: 12vh;
   h1 {
     font-size: 73px;
     letter-spacing: -0.5px;
@@ -134,7 +128,8 @@ button {
   height: 150px;
   width: 3px;
   margin: 45px auto 30px;
-  background-image: linear-gradient($black 33%, rgba($black, 0) 0%);
+  // background-image: linear-gradient($black 33%, rgba($black, 0) 0%);
+  background-image: linear-gradient($lightGrey 33%, rgba($lightGrey, 0) 0%);
   background-position: right;
   background-size: 3px 30px;
   background-repeat: repeat-y;

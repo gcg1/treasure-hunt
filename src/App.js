@@ -36,8 +36,6 @@ class App extends React.Component {
       this.toggleSuccess();
     }
   }
-
-  // DON'T FORGET TO REMOVE THIS
   componentDidMount() {
     document.addEventListener("keydown", this.escFunction, false);
   }
@@ -53,7 +51,7 @@ class App extends React.Component {
       this.setState({ animatingFab: true });
       setTimeout(() => {
         this.setState({ animatingFab: false });
-      }, 500);
+      }, 1500);
     };
     !this.state.animatingFab && animate();
   }

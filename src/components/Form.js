@@ -14,13 +14,13 @@ export class Form extends React.Component {
           id: "latin",
           question:
             "Which Latin motto is written 4 times on the doors of a building?",
-          options: ["Serviam", "Meliora", "Emeritus", "Apricus"],
+          options: ["Emeritus", "Meliora", "Serviam", "Apricus"],
           answer: "Serviam",
         },
         {
           id: "bikes",
           question: "How many bike rails in the bike shelter?",
-          options: ["8", "10", "12", "14"],
+          options: ["10", "12", "14", "16"],
           answer: "12",
         },
         {
@@ -39,8 +39,8 @@ export class Form extends React.Component {
         {
           id: "steps",
           question: "How many steps up to the wildflower meadow?",
-          options: ["?", "??", "???", "????"],
-          answer: "???",
+          options: ["?", "??", "13", "????"],
+          answer: "13",
         },
         {
           id: "pond",
@@ -115,7 +115,7 @@ export class Form extends React.Component {
       () => document.getElementById("treasure-chest").classList.add("unlocked"),
       600
     );
-    // addCompletionToGoogleSheet();
+    addCompletionToGoogleSheet();
   }
 
   removeError() {

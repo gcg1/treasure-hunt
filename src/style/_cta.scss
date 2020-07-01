@@ -1,15 +1,14 @@
 @import "variables";
 
 .CTA {
-  font-size: 18px;
-
+  // font-size: 18px;
   a {
     color: #fff;
   }
   p {
-    margin: auto;
-    max-width: 400px;
-    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
     line-height: 1.5;
   }
   input {
@@ -23,29 +22,30 @@
     text-align: center;
     padding: 7px;
     width: 400px;
-    max-width: calc(100% - 40px);
+    max-width: calc(100% - 20px);
     display: block;
     margin: 20px auto;
     &::placeholder {
       color: $lightGrey;
     }
   }
-  // .checkbox-wrapper {
-  //   user-select: none;
-  //   input[type="checkbox"] {
-  //     color: $primary;
-  //     background-color: #fff;
-  //     width: 15px;
-  //     height: 15px;
-  //     vertical-align: middle;
-  //     margin-right: 5px;
-  //   }
-  //   label {
-  //     line-height: 1.1;
-  //     font-size: 15px;
-  //     margin-left: 3px;
-  //   }
-  // }
+  .checkbox-wrapper {
+    margin-top: 15px;
+    user-select: none;
+    input[type="checkbox"] {
+      color: $primary;
+      background-color: #fff;
+      width: 15px;
+      height: 15px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    label {
+      line-height: 1.1;
+      font-size: 15px;
+      margin-left: 3px;
+    }
+  }
   input[type="submit"] {
     // margin: 10px 0;
     appearance: none;

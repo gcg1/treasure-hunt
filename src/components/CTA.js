@@ -1,34 +1,44 @@
 import React from "react";
 import { addEmailToGoogleSheet } from "../GoogleSheet";
+import { numContestants } from "../GoogleSheet";
 
 export class CTA extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      // permission_to_contact: "yes",
+      permission_to_contact: "yes",
       submitted: false,
+      contestants: "",
     };
 
     this.handleEmailChange = this.handleEmailChange.bind(this);
-    // this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    const checkContestants = async () => {
+      const contestants = await numContestants();
+      this.setState({ contestants: contestants - 1 });
+    };
+    checkContestants();
   }
 
   handleEmailChange(e) {
     this.setState({ email: e.target.value });
   }
 
-  // handleCheckboxChange(e) {
-  //   this.state.permission_to_contact === "yes"
-  //     ? this.setState({ permission_to_contact: "no" })
-  //     : this.setState({ permission_to_contact: "yes" });
-  // }
+  handleCheckboxChange(e) {
+    this.state.permission_to_contact === "yes"
+      ? this.setState({ permission_to_contact: "no" })
+      : this.setState({ permission_to_contact: "yes" });
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     this.setState({ submitted: true });
-    addEmailToGoogleSheet(this.state.email);
+    addEmailToGoogleSheet(this.state.email, this.state.permission_to_contact);
   }
 
   render() {
@@ -36,14 +46,10 @@ export class CTA extends React.Component {
       <div>
         {this.state.submitted === false && (
           <form className="CTA" onSubmit={this.handleSubmit}>
-            <h2>Congratulations!</h2>
+            <h2>Congratulations</h2>
             <p>
-              Enter your email below to hear about more activities + important
-              news from{" "}
-              <a href="https://www.friendsofmorleypark.org.uk/" target="_blank">
-                FOMP
-              </a>
-              .
+              Enter into a draw for the grand prize. There are only{" "}
+              {this.state.contestants} contestants so far!
             </p>
             <input
               type="email"
@@ -56,10 +62,10 @@ export class CTA extends React.Component {
             <input
               className="big-button fill-button"
               type="submit"
-              value="Submit"
+              value="Enter prize draw"
             />
 
-            {/* <div className="checkbox-wrapper">
+            <div className="checkbox-wrapper">
               <input
                 type="checkbox"
                 id="permission-to-contact"
@@ -71,12 +77,13 @@ export class CTA extends React.Component {
               <label htmlFor="permission-to-contact">
                 Tell me about park news.
               </label>
-            </div> */}
+            </div>
           </form>
         )}
         {this.state.submitted === true && (
           <div>
             <h2>Thank you</h2>
+            <p>We'll be in touch with more details about the prize draw.</p>
             <p>See you on the next park adventure!</p>
           </div>
         )}

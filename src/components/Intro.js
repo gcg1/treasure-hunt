@@ -5,7 +5,7 @@ export class Intro extends React.Component {
   render() {
     return (
       <div className="Intro">
-        <span>FOMP's</span>
+        <span>Morley Park</span>
         <h1>Treasure Hunt</h1>
         <p className="instructions">
           Answer 10 riddles around Morley Park to unlock the treasure. Check{" "}

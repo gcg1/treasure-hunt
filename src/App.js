@@ -24,21 +24,21 @@ class App extends React.Component {
     this.toggleMapMode = this.toggleMapMode.bind(this);
     this.promptFab = this.promptFab.bind(this);
     this.toggleSuccess = this.toggleSuccess.bind(this);
-    this.escFunction = this.escFunction.bind(this);
+    // this.escFunction = this.escFunction.bind(this);
   }
 
   toggleSuccess() {
     this.setState({ success: true });
   }
 
-  escFunction(e) {
-    if (e.keyCode === 27) {
-      this.toggleSuccess();
-    }
-  }
-  componentDidMount() {
-    document.addEventListener("keydown", this.escFunction, false);
-  }
+  // escFunction(e) {
+  //   if (e.keyCode === 27) {
+  //     this.toggleSuccess();
+  //   }
+  // }
+  // componentDidMount() {
+  //   document.addEventListener("keydown", this.escFunction, false);
+  // }
 
   toggleMapMode() {
     this.state.mapMode

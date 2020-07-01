@@ -1,5 +1,6 @@
 import React from "react";
 import { Riddle } from "./Riddle";
+import { addCompletionToGoogleSheet } from "../GoogleSheet";
 
 export class Form extends React.Component {
   constructor(props) {
@@ -17,10 +18,59 @@ export class Form extends React.Component {
           answer: "Serviam",
         },
         {
-          id: "flowers",
+          id: "bikes",
           question: "How many bike rails in the bike shelter?",
           options: ["8", "10", "12", "14"],
           answer: "12",
+        },
+        {
+          id: "oak",
+          question: "What dangerous insect is found in the old oak tree?",
+          options: ["Stag beetle", "Moth", "Bumblebee", "Caterpillar"],
+          answer: "Moth",
+        },
+        {
+          id: "scouts",
+          question:
+            "They sometimes camp in the South West corner of the Park.  What colour is their banner?",
+          options: ["Purple", "Orange", "Green", "Blue"],
+          answer: "Purple",
+        },
+        {
+          id: "steps",
+          question: "How many steps up to the wildflower meadow?",
+          options: ["?", "??", "???", "????"],
+          answer: "???",
+        },
+        {
+          id: "pond",
+          question: "What are tall and skinny and live in the pond?",
+          options: ["Foxgloves", "Bamboo", "Sunflowers", "Bullrushes"],
+          answer: "Bullrushes",
+        },
+        {
+          id: "fruit",
+          question: "What summer fruit can you find in the meadow?",
+          options: ["Apples", "Strawberries", "Blackberries", "Cherries"],
+          answer: "Blackberries",
+        },
+        {
+          id: "flowers",
+          question: "Which colour flower CAN’T you find in the park?",
+          options: ["Red", "White", "Purple", "Yellow"],
+          answer: "Red",
+        },
+        {
+          id: "benches",
+          question: "How many benches are there in the meadow?",
+          options: ["1", "2", "3", "4"],
+          answer: "3",
+        },
+        {
+          id: "woodland",
+          question: "What animal’s house can you see on the Woodland walk?",
+          options: ["Horse", "Badger", "Bat", "Butterfly"],
+          answer: "Bat",
         },
       ],
     };
@@ -61,11 +111,11 @@ export class Form extends React.Component {
     this.props.toggleSuccess();
     document.getElementsByClassName("creak")[0].play();
     document.getElementsByClassName("fanfare")[0].play();
-    document.getElementsByClassName("App")[0].classList.add("dark");
     setTimeout(
       () => document.getElementById("treasure-chest").classList.add("unlocked"),
       600
     );
+    // addCompletionToGoogleSheet();
   }
 
   removeError() {

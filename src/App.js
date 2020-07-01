@@ -24,10 +24,22 @@ class App extends React.Component {
     this.toggleMapMode = this.toggleMapMode.bind(this);
     this.promptFab = this.promptFab.bind(this);
     this.toggleSuccess = this.toggleSuccess.bind(this);
+    this.escFunction = this.escFunction.bind(this);
   }
 
   toggleSuccess() {
     this.setState({ success: true });
+  }
+
+  escFunction(e) {
+    if (e.keyCode === 27) {
+      this.toggleSuccess();
+    }
+  }
+
+  // DON'T FORGET TO REMOVE THIS
+  componentDidMount() {
+    document.addEventListener("keydown", this.escFunction, false);
   }
 
   toggleMapMode() {
@@ -47,10 +59,8 @@ class App extends React.Component {
   }
 
   render() {
-    // const { width, height } = useWindowSize();
-
     return (
-      <div className="App">
+      <div className={`App ${this.state.success && "dark"}`}>
         <div className="content">
           <Audio />
           {this.state.mapMode ? <Map toggleMap={this.toggleMapMode} /> : null}

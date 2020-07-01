@@ -387,14 +387,19 @@
   display: none;
 }
 
-.CTA h2 {
-  margin-bottom: 0;
+.CTA {
+  font-size: 18px;
+}
+
+.CTA a {
+  color: #fff;
 }
 
 .CTA p {
-  margin-top: 10px;
+  margin: auto;
+  max-width: 400px;
+  margin-top: 45px;
   line-height: 1.5;
-  margin-bottom: 10px;
 }
 
 .CTA input {
@@ -408,11 +413,10 @@
   border-radius: 99px;
   text-align: center;
   padding: 7px;
-  max-width: 100%;
   width: 400px;
   max-width: calc(100% - 40px);
   display: block;
-  margin: 30px auto;
+  margin: 20px auto;
 }
 
 .CTA input[type="email"]::-webkit-input-placeholder {
@@ -429,28 +433,6 @@
 
 .CTA input[type="email"]::placeholder {
   color: #80929e;
-}
-
-.CTA .checkbox-wrapper {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  margin-bottom: 20px;
-}
-
-.CTA .checkbox-wrapper input[type="checkbox"] {
-  color: #00b9cd;
-  background-color: #fff;
-  width: 15px;
-  height: 15px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-.CTA .checkbox-wrapper label {
-  font-size: 15px;
-  margin-left: 3px;
 }
 
 .CTA input[type="submit"] {
@@ -569,7 +551,7 @@ button {
 }
 
 .Intro {
-  margin-top: 10vh;
+  margin-top: 20vh;
 }
 
 .Intro h1 {

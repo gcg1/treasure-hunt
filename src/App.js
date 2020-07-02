@@ -29,6 +29,7 @@ class App extends React.Component {
 
   toggleSuccess() {
     this.setState({ success: true });
+    document.getElementsByTagName("html")[0].classList.add("dark");
   }
 
   // escFunction(e) {
@@ -58,7 +59,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={`App ${this.state.success && "dark"}`}>
+      <div className={`App ${this.state.success ? "dark" : ""}`}>
         <div className="content">
           <Audio />
           {this.state.mapMode ? <Map toggleMap={this.toggleMapMode} /> : null}

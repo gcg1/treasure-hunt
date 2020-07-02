@@ -10,9 +10,12 @@
 @import "CTA";
 @import "footer";
 
-// html {
-//   scroll-behavior: smooth;
-// }
+html {
+  background-color: $ultralight;
+  &.dark {
+    background-color: $black;
+  }
+}
 
 body {
   margin: 0;
@@ -36,17 +39,6 @@ input {
   color: $black;
 }
 
-button {
-  cursor: pointer;
-  color: inherit;
-}
-
-.big-button {
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity 0.15s;
-}
-
 .App {
   padding: 20px;
   color: $black;
@@ -59,6 +51,17 @@ button {
 .App.dark {
   background-color: $black;
   color: #fff;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
+.big-button {
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.15s;
 }
 
 .content {

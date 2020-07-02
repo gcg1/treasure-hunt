@@ -535,6 +535,14 @@ footer .attribution a {
   }
 }
 
+html {
+  background-color: #f7f5ec;
+}
+
+html.dark {
+  background-color: #00263e;
+}
+
 body {
   margin: 0;
 }
@@ -557,18 +565,6 @@ input {
   color: #00263e;
 }
 
-button {
-  cursor: pointer;
-  color: inherit;
-}
-
-.big-button {
-  cursor: pointer;
-  opacity: 1;
-  -webkit-transition: opacity 0.15s;
-  transition: opacity 0.15s;
-}
-
 .App {
   padding: 20px;
   color: #00263e;
@@ -582,6 +578,18 @@ button {
 .App.dark {
   background-color: #00263e;
   color: #fff;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
+.big-button {
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
 }
 
 .content {

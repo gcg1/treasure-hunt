@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7dc2b9f7726caf563d1c75a9b3770961",
+    "revision": "a3ec264b4e93cd3a5f824d410b5306d1",
     "url": "/treasure-hunt/index.html"
   },
   {
-    "revision": "0b78d834bc0ae1cdac68",
-    "url": "/treasure-hunt/static/css/main.a51741f9.chunk.css"
+    "revision": "b0c858480593cf3ff740",
+    "url": "/treasure-hunt/static/css/main.a28b741e.chunk.css"
   },
   {
     "revision": "f4b2007e97cc3cb601fe",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/treasure-hunt/static/js/2.3b0023bc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0b78d834bc0ae1cdac68",
-    "url": "/treasure-hunt/static/js/main.4d1fd222.chunk.js"
+    "revision": "b0c858480593cf3ff740",
+    "url": "/treasure-hunt/static/js/main.49131705.chunk.js"
   },
   {
     "revision": "d1bd9c1ce958099765ed",

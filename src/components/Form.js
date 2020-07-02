@@ -32,15 +32,15 @@ export class Form extends React.Component {
         {
           id: "scouts",
           question:
-            "They sometimes camp in the South West corner of the Park.  What colour is their banner?",
+            "They have a hut in the South West corner of the Park. What colour is their banner?",
           options: ["Purple", "Orange", "Green", "Blue"],
           answer: "Purple",
         },
         {
           id: "steps",
           question: "How many steps up to the wildflower meadow?",
-          options: ["?", "??", "13", "????"],
-          answer: "13",
+          options: ["11", "13", "15", "17"],
+          answer: "15",
         },
         {
           id: "pond",

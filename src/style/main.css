@@ -34,7 +34,8 @@
   }
   body .App .inline-map {
     display: block;
-    width: 95%;
+    height: calc(100vh - 450px);
+    margin: auto;
   }
   body .App .riddles {
     max-width: none;
@@ -47,7 +48,7 @@
     padding: 30px;
   }
   body .App .riddles .riddle-wrapper label {
-    background-color: none;
+    background-color: #fff;
     margin: 0;
     padding: 0;
   }
@@ -59,6 +60,9 @@
   }
   body .App .treasure-chest {
     display: none;
+  }
+  body .App footer {
+    margin: 30px auto 0 auto;
   }
 }
 

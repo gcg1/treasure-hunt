@@ -22,7 +22,8 @@
       }
       .inline-map {
         display: block;
-        width: 95%;
+        height: calc(100vh - 450px);
+        margin: auto;
       }
       .riddles {
         max-width: none;
@@ -34,7 +35,7 @@
           padding: 30px;
 
           label {
-            background-color: none;
+            background-color: #fff;
             margin: 0;
             padding: 0;
           }
@@ -48,6 +49,9 @@
       }
       .treasure-chest {
         display: none;
+      }
+      footer {
+        margin: 30px auto 0 auto;
       }
     }
   }

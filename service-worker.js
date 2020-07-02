@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/treasure-hunt/precache-manifest.efff9b6e125ef3f1c009269410b5d8da.js"
+  "/treasure-hunt/precache-manifest.17636c2810a3d4c8d792cbf0565b91d0.js"
 );
 
 self.addEventListener('message', (event) => {

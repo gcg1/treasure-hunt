@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/treasure-hunt/static/css/main.48b435d4.chunk.css",
-    "main.js": "/treasure-hunt/static/js/main.3f1fe11a.chunk.js",
-    "main.js.map": "/treasure-hunt/static/js/main.3f1fe11a.chunk.js.map",
+    "main.js": "/treasure-hunt/static/js/main.7b91fd14.chunk.js",
+    "main.js.map": "/treasure-hunt/static/js/main.7b91fd14.chunk.js.map",
     "runtime-main.js": "/treasure-hunt/static/js/runtime-main.a7665cce.js",
     "runtime-main.js.map": "/treasure-hunt/static/js/runtime-main.a7665cce.js.map",
     "static/js/2.3b0023bc.chunk.js": "/treasure-hunt/static/js/2.3b0023bc.chunk.js",
     "static/js/2.3b0023bc.chunk.js.map": "/treasure-hunt/static/js/2.3b0023bc.chunk.js.map",
     "index.html": "/treasure-hunt/index.html",
-    "precache-manifest.efff9b6e125ef3f1c009269410b5d8da.js": "/treasure-hunt/precache-manifest.efff9b6e125ef3f1c009269410b5d8da.js",
+    "precache-manifest.17636c2810a3d4c8d792cbf0565b91d0.js": "/treasure-hunt/precache-manifest.17636c2810a3d4c8d792cbf0565b91d0.js",
     "service-worker.js": "/treasure-hunt/service-worker.js",
     "static/css/main.48b435d4.chunk.css.map": "/treasure-hunt/static/css/main.48b435d4.chunk.css.map",
     "static/js/2.3b0023bc.chunk.js.LICENSE.txt": "/treasure-hunt/static/js/2.3b0023bc.chunk.js.LICENSE.txt",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.a7665cce.js",
     "static/js/2.3b0023bc.chunk.js",
     "static/css/main.48b435d4.chunk.css",
-    "static/js/main.3f1fe11a.chunk.js"
+    "static/js/main.7b91fd14.chunk.js"
   ]
 }

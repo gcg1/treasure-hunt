@@ -83,7 +83,7 @@ export class CTA extends React.Component {
         {this.state.submitted === true && (
           <div>
             <h2>Thank you</h2>
-            <p>We'll be in touch with more details about the prize draw.</p>
+            <p>We'll be in touch if you're the lucky winner.</p>
             <p>See you on the next park adventure!</p>
           </div>
         )}

@@ -7,19 +7,19 @@ import fanfare from "../assets/sounds/fanfare.mp3";
 export const Audio = () => {
   return (
     <div>
-      <audio className="locked">
+      <audio preload="auto" className="locked">
         <source className="src_mp3" type="audio/mp3" src={locked} />
       </audio>
 
-      <audio className="ohdear">
+      <audio preload="auto" className="ohdear">
         <source className="src_mp3" type="audio/mp3" src={ohdear} />
       </audio>
 
-      <audio className="creak">
+      <audio preload="auto" className="creak">
         <source className="src_mp3" type="audio/mp3" src={creak} />
       </audio>
 
-      <audio className="fanfare">
+      <audio preload="auto" className="fanfare">
         <source className="src_mp3" type="audio/mp3" src={fanfare} />
       </audio>
     </div>

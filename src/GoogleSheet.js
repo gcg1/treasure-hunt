@@ -24,7 +24,7 @@ export const addEmailToGoogleSheet = async (email, permission) => {
   });
   await doc.loadInfo(); // loads document
   const sheet = doc.sheetsByIndex[0];
-  await sheet.addRow({
+  sheet.addRow({
     email: email,
     permission_to_contact: permission,
     timestamp: Date(),
@@ -41,7 +41,7 @@ export const addCompletionToGoogleSheet = async () => {
   });
   await doc.loadInfo(); // loads document
   const sheet = doc.sheetsByIndex[0];
-  await sheet.addRow({
+  sheet.addRow({
     timestamp: Date(),
   });
 };

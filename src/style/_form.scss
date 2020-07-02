@@ -124,6 +124,7 @@
       pointer-events: none;
     }
     input[type="radio"]:not(:checked) + label {
+      color: #fff;
       background-color: $primary;
       opacity: 0.2;
     }

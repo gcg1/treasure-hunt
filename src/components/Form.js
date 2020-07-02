@@ -26,7 +26,7 @@ export class Form extends React.Component {
         {
           id: "oak",
           question: "What dangerous insect is found in the old oak tree?",
-          options: ["Stag beetle", "Moth", "Bumblebee", "Caterpillar"],
+          options: ["Stag beetle", "Moth", "Bumblebee", "Grasshopper"],
           answer: "Moth",
         },
         {
@@ -45,13 +45,13 @@ export class Form extends React.Component {
         {
           id: "pond",
           question: "What are tall and skinny and live in the pond?",
-          options: ["Foxgloves", "Bamboo", "Sunflowers", "Bullrushes"],
-          answer: "Bullrushes",
+          options: ["Foxgloves", "Bamboo", "Sunflowers", "Bulrushes"],
+          answer: "Bulrushes",
         },
         {
           id: "fruit",
           question: "What summer fruit can you find in the meadow?",
-          options: ["Apples", "Strawberries", "Blackberries", "Cherries"],
+          options: ["Pears", "Strawberries", "Blackberries", "Cherries"],
           answer: "Blackberries",
         },
         {
@@ -140,7 +140,8 @@ export class Form extends React.Component {
       <Riddle
         key={riddle.id}
         id={riddle.id}
-        questionNumber={index}
+        questionNumber={index + 1}
+        questionsLeft={this.state.riddles.length - (index + 1)}
         question={riddle.question}
         options={riddle.options}
         answer={riddle.answer}
@@ -153,9 +154,9 @@ export class Form extends React.Component {
     return (
       <form className="riddles" onChange={this.removeError}>
         {riddlesList}
-        <div className="vertical-line"></div>
 
-        <div className="treasure-chest">
+        <div id="check" className="treasure-chest-wrapper">
+          <div className="vertical-line"></div>
           <svg
             width="243"
             height="168"

@@ -58,7 +58,7 @@
     padding: 5px 30px;
     border: solid #00263e 1px;
   }
-  body .App .treasure-chest {
+  body .App .treasure-chest-wrapper {
     display: none;
   }
   body .App footer {
@@ -406,6 +406,7 @@
 }
 
 .App.dark .riddles input[type="radio"]:not(:checked) + label {
+  color: #fff;
   background-color: #00b9cd;
   opacity: 0.2;
 }
@@ -532,10 +533,6 @@ footer .attribution a {
   footer {
     margin-bottom: 15px;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {

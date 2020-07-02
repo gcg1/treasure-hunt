@@ -39,7 +39,7 @@ export class Riddle extends React.Component {
     ));
 
     return (
-      <div>
+      <div className="riddle-wrapper">
         <div className="vertical-line"></div>
         <p className="riddle-question">
           {this.props.questionNumber + 1}. {this.props.question}

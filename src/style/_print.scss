@@ -1,3 +1,5 @@
+@import "variables";
+
 @media print {
   body {
     .App {
@@ -20,19 +22,32 @@
       }
       .inline-map {
         display: block;
+        width: 95%;
       }
-      form {
-        select {
-          option {
-            text-align: center;
-            box-shadow: none;
-          }
-          option,
-          option:checked {
-            background: none;
-            border: none;
+      .riddles {
+        max-width: none;
+        .riddle-wrapper {
+          text-align: left;
+          width: calc(50% - 60px);
+          display: inline-block;
+          vertical-align: top;
+          padding: 30px;
+
+          label {
+            background-color: none;
+            margin: 0;
+            padding: 0;
           }
         }
+        &::after {
+          margin-top: 150px;
+          content: "Check your answers on MorleyPark.co.uk";
+          padding: 5px 30px;
+          border: solid $black 1px;
+        }
+      }
+      .treasure-chest {
+        display: none;
       }
     }
   }

@@ -34,16 +34,31 @@
   }
   body .App .inline-map {
     display: block;
+    width: 95%;
   }
-  body .App form select option {
-    text-align: center;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+  body .App .riddles {
+    max-width: none;
   }
-  body .App form select option,
-  body .App form select option:checked {
-    background: none;
-    border: none;
+  body .App .riddles .riddle-wrapper {
+    text-align: left;
+    width: calc(50% - 60px);
+    display: inline-block;
+    vertical-align: top;
+    padding: 30px;
+  }
+  body .App .riddles .riddle-wrapper label {
+    background-color: none;
+    margin: 0;
+    padding: 0;
+  }
+  body .App .riddles::after {
+    margin-top: 150px;
+    content: "Check your answers on MorleyPark.co.uk";
+    padding: 5px 30px;
+    border: solid #00263e 1px;
+  }
+  body .App .treasure-chest {
+    display: none;
   }
 }
 
@@ -53,6 +68,7 @@
 }
 
 .App .content canvas {
+  margin: auto;
   position: fixed !important;
   height: 100vh;
 }

@@ -34,7 +34,7 @@
   }
   body .App .inline-map {
     display: block;
-    height: calc(100vh - 450px);
+    height: 550px;
     margin: auto;
   }
   body .App .riddles {
@@ -45,16 +45,22 @@
     width: calc(50% - 60px);
     display: inline-block;
     vertical-align: top;
-    padding: 30px;
+    padding: 5px 30px;
+  }
+  body .App .riddles .riddle-wrapper .riddle-question {
+    font-weight: bold;
   }
   body .App .riddles .riddle-wrapper label {
     background-color: #fff;
     margin: 0;
     padding: 0;
   }
+  body .App .riddles .riddle-wrapper input[type="radio"]:checked + label {
+    background-color: #fff;
+  }
   body .App .riddles::after {
     margin-top: 150px;
-    content: "Check your answers on MorleyPark.co.uk";
+    content: "Check your answers at MorleyPark.co.uk";
     padding: 5px 30px;
     border: solid #00263e 1px;
   }

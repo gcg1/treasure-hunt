@@ -78,10 +78,11 @@
 }
 
 .fab-arrow {
+  z-index: 0.5;
   pointer-events: none;
   position: fixed;
-  bottom: 90px;
-  right: 90px;
+  bottom: 0;
+  right: 100px;
 }
 
 .fab {

@@ -3,6 +3,9 @@ import React from "react";
 
 export class Footer extends React.Component {
   render() {
+    const supportMessageTemplate =
+      "Hi,%20I'm%20having%20some%20trouble%20with%20the%20treasure%20hunt...";
+
     return (
       <footer>
         {/* <Likes /> */}
@@ -19,8 +22,16 @@ export class Footer extends React.Component {
           </span>
         </div>
         <a
-          className="support-link"
-          href="sms:07851598021&body=Hi, I'm having some trouble with the treasure hunt..."
+          className="support-link hidden-on-desktop"
+          href={`sms:07851598021&body=${supportMessageTemplate}`}
+          target="_blank"
+        >
+          Support
+        </a>
+        <a
+          className="support-link hidden-on-mobile"
+          href="mailto:georgefbcunliffe+treasurehunt@gmail.com?&subject=Treasure%20Hunt"
+          target="_blank"
         >
           Support
         </a>

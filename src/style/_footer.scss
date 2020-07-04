@@ -31,10 +31,19 @@ footer {
     color: $lightGrey;
     line-height: 1.6;
   }
+  .hidden-on-mobile {
+    display: none;
+  }
 }
 
 @media (min-width: 440px) {
   footer {
     margin-bottom: 15px;
+    .hidden-on-desktop {
+      display: none;
+    }
+    .hidden-on-mobile {
+      display: block;
+    }
   }
 }

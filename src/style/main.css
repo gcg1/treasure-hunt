@@ -526,9 +526,19 @@ footer a {
   line-height: 1.6;
 }
 
+footer .hidden-on-mobile {
+  display: none;
+}
+
 @media (min-width: 440px) {
   footer {
     margin-bottom: 15px;
+  }
+  footer .hidden-on-desktop {
+    display: none;
+  }
+  footer .hidden-on-mobile {
+    display: block;
   }
 }
 

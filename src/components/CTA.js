@@ -88,8 +88,8 @@ export class CTA extends React.Component {
           <div>
             <h2>Thank you</h2>
             <p>
-              The winner of the draw will be randomly selected on Friday 31st
-              August. Good luck!
+              The lucky winner will be randomly selected on Monday 31st August.
+              Good luck!
             </p>
           </div>
         )}

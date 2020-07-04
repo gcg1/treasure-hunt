@@ -57,7 +57,7 @@ export class Form extends React.Component {
         },
         {
           id: "flowers",
-          question: "Which colour flower CAN’T you find in the park?",
+          question: "Which flower colour CAN’T you find in the park?",
           options: ["Red", "White", "Purple", "Yellow"],
           answer: "Red",
         },

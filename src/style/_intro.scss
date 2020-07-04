@@ -1,0 +1,26 @@
+.Intro {
+  margin-top: 10%;
+  h1 {
+    font-size: 73px;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin: 15px 0;
+  }
+  .instructions {
+    margin: 0 auto;
+    .inline-button {
+      line-height: inherit;
+    }
+  }
+  .big-button {
+    margin-bottom: 0;
+  }
+}
+.App.dark {
+  .Intro {
+    .big-button {
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+}

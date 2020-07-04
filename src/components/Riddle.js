@@ -1,4 +1,5 @@
 import React from "react";
+import { scroller } from "react-scroll";
 
 export class Riddle extends React.Component {
   constructor(props) {
@@ -8,11 +9,26 @@ export class Riddle extends React.Component {
       answer: this.props.answer,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.scrollTo = this.scrollTo.bind(this);
+  }
+
+  scrollTo(id) {
+    scroller.scrollTo(id, {
+      duration: 500,
+      offset: 80,
+      delay: 50,
+      smooth: true,
+    });
   }
 
   handleChange(e) {
     if (this.state.value.length === 0) {
       this.props.incrementTotalAnswers();
+      if (this.props.questionsLeft > 0) {
+        this.scrollTo(`riddle-${this.props.questionNumber + 1}`);
+      } else {
+        this.scrollTo("check");
+      }
     }
     if (e.target.value === this.state.answer) {
       this.props.incrementCorrectAnswers();
@@ -26,21 +42,28 @@ export class Riddle extends React.Component {
 
   render() {
     const optionsList = this.props.options.map((option) => (
-      <div key={option} onChange={this.handleChange}>
+      <div
+        key={this.props.questionNumber + "-" + option}
+        onChange={this.handleChange}
+      >
         <input
           required
           type="radio"
-          id={option}
+          id={`${this.props.questionNumber}-${option}`}
           name={this.props.id}
           value={option}
         />
-        <label htmlFor={option}>{option}</label>
+        <label htmlFor={`${this.props.questionNumber}-${option}`}>
+          {option}
+        </label>
       </div>
     ));
 
     return (
       <div
-        className="riddle-wrapper"
+        className={`riddle-wrapper ${
+          this.state.value === "" ? "unanswered" : ""
+        }`}
         id={`riddle-${this.props.questionNumber}`}
       >
         <div className="vertical-line"></div>

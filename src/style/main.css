@@ -77,6 +77,39 @@
   padding: 0 20px;
 }
 
+.App.dark .print-button {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.Intro {
+  margin-top: 10%;
+}
+
+.Intro h1 {
+  font-size: 73px;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin: 15px 0;
+}
+
+.Intro .instructions {
+  margin: 0 auto;
+}
+
+.Intro .instructions .inline-button {
+  line-height: inherit;
+}
+
+.Intro .big-button {
+  margin-bottom: 0;
+}
+
+.App.dark .Intro .big-button {
+  pointer-events: none;
+  visibility: hidden;
+}
+
 .App .content canvas {
   margin: auto;
   position: fixed !important;
@@ -211,12 +244,12 @@
   background-color: #00b9cd;
 }
 
-.riddles svg {
+.riddles .treasure-chest-wrapper svg {
   display: block;
-  margin: 45px auto;
+  margin: auto;
 }
 
-.riddles svg #lock {
+.riddles .treasure-chest-wrapper svg #lock {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   transform-box: fill-box;
@@ -228,7 +261,7 @@
   transition: transform 0.15s, -webkit-transform 0.15s;
 }
 
-.riddles svg #lock #lock-gap {
+.riddles .treasure-chest-wrapper svg #lock #lock-gap {
   transform-box: fill-box;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
@@ -241,7 +274,7 @@
   transition: transform 0.15s, -webkit-transform 0.15s;
 }
 
-.riddles svg #lock.animating {
+.riddles .treasure-chest-wrapper svg #lock.animating {
   -webkit-animation-name: swing;
           animation-name: swing;
   -webkit-animation-duration: 0.5s;
@@ -304,7 +337,7 @@
   }
 }
 
-.riddles svg #lid-underside {
+.riddles .treasure-chest-wrapper svg #lid-underside {
   -webkit-transform: rotateX(90deg);
           transform: rotateX(90deg);
   transform-box: fill-box;
@@ -318,7 +351,7 @@
           transition-delay: 0.15s;
 }
 
-.riddles svg #gold-blur {
+.riddles .treasure-chest-wrapper svg #gold-blur {
   opacity: 0;
   -webkit-transition: opacity 1.5s;
   transition: opacity 1.5s;
@@ -326,7 +359,7 @@
           transition-delay: 0.15s;
 }
 
-.riddles svg #chest-top {
+.riddles .treasure-chest-wrapper svg #chest-top {
   -webkit-transform: rotateX(0);
           transform: rotateX(0);
   -webkit-transition: -webkit-transform 1.5s ease;
@@ -337,26 +370,26 @@
           transition-delay: 0.15s;
 }
 
-.riddles svg #treasure-chest.unlocked #lid-underside {
+.riddles .treasure-chest-wrapper svg #treasure-chest.unlocked #lid-underside {
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
 }
 
-.riddles svg #treasure-chest.unlocked #gold-blur {
+.riddles .treasure-chest-wrapper svg #treasure-chest.unlocked #gold-blur {
   opacity: 0.6;
 }
 
-.riddles svg #treasure-chest.unlocked #chest-top {
+.riddles .treasure-chest-wrapper svg #treasure-chest.unlocked #chest-top {
   -webkit-transform: rotateX(70deg);
           transform: rotateX(70deg);
 }
 
-.riddles svg #treasure-chest.unlocked #lock {
+.riddles .treasure-chest-wrapper svg #treasure-chest.unlocked #lock {
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
 }
 
-.riddles svg #treasure-chest.unlocked #lock #lock-gap {
+.riddles .treasure-chest-wrapper svg #treasure-chest.unlocked #lock #lock-gap {
   opacity: 1;
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
@@ -369,15 +402,7 @@
           appearance: none;
 }
 
-.riddles .error-message {
-  margin-top: 5px;
-  height: 34px;
-  display: block;
-  font-size: 17px;
-  color: #e74c3c;
-}
-
-.App.dark .riddles input {
+.App.dark .riddles {
   pointer-events: none;
 }
 
@@ -397,8 +422,7 @@
 }
 
 .CTA p {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 15px auto;
   max-width: 450px;
   line-height: 1.5;
 }
@@ -417,7 +441,7 @@
   width: 400px;
   max-width: calc(100% - 20px);
   display: block;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 .CTA input[type="email"]::-webkit-input-placeholder {
@@ -436,8 +460,13 @@
   color: #80929e;
 }
 
+.CTA input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 .CTA .checkbox-wrapper {
-  margin-top: 15px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -456,18 +485,11 @@
 .CTA .checkbox-wrapper label {
   line-height: 1.1;
   font-size: 15px;
-  margin-left: 3px;
-}
-
-.CTA input[type="submit"] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 
 footer {
   font-size: 17px;
-  margin: 25vh auto 120px auto;
+  margin: 30% auto 60px auto;
 }
 
 footer .like-counter {
@@ -496,13 +518,12 @@ footer .like-counter button .heart-fill {
   display: none;
 }
 
-footer .attribution {
+footer .attribution,
+footer a {
+  margin: 15px auto;
+  color: inherit;
   color: #80929e;
   line-height: 1.6;
-}
-
-footer .attribution a {
-  color: inherit;
 }
 
 @media (min-width: 440px) {
@@ -573,25 +594,6 @@ button {
   margin: auto;
 }
 
-.Intro {
-  margin-top: 12vh;
-}
-
-.Intro h1 {
-  font-size: 73px;
-  letter-spacing: -0.5px;
-  line-height: 1;
-  margin: 15px 0;
-}
-
-.Intro .instructions {
-  margin: 30px auto 45px auto;
-}
-
-.Intro .instructions .inline-button {
-  line-height: inherit;
-}
-
 .inline-map {
   width: 100%;
   margin: 45px auto;
@@ -607,8 +609,21 @@ button {
 }
 
 .big-button {
+  margin: 30px 0;
   font-size: inherit;
   padding: 5px 45px;
+}
+
+.outline-button {
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: solid 3px;
+}
+
+.outline-button:hover {
+  background: #00263e;
+  color: #fff;
 }
 
 .fill-button {
@@ -641,5 +656,12 @@ button {
   background-repeat: repeat-y;
   -webkit-transition: background-image 0.6s;
   transition: background-image 0.6s;
+}
+
+.error-message {
+  height: 34px;
+  display: block;
+  font-size: 17px;
+  color: #e74c3c;
 }
 /*# sourceMappingURL=main.css.map */

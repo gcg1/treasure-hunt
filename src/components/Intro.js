@@ -1,5 +1,6 @@
 import React from "react";
 import map from "../assets/map.svg";
+import { Link } from "react-scroll";
 
 export class Intro extends React.Component {
   render() {
@@ -8,15 +9,16 @@ export class Intro extends React.Component {
         <span>Morley Park</span>
         <h1>Treasure Hunt</h1>
         <p className="instructions">
-          Answer 10 questions around Morley Park to unlock the treasure. Check{" "}
+          Answer 10 questions around the park to unlock the treasure. Check{" "}
           <button className="inline-button" onClick={this.props.mapPrompt}>
-            the map
+            your map
           </button>{" "}
           for clues.
         </p>
-        {/* <a href="#form" className="big-button outline-button">
-          Start
-        </a> */}
+        <Link to="riddles" smooth={true} offset={80} duration={500}>
+          <button className="big-button outline-button">Start</button>
+        </Link>
+
         <img className="inline-map" src={map} alt="Treasure Map" />
       </div>
     );

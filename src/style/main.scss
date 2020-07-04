@@ -4,6 +4,7 @@
 @import "print";
 
 @import "header";
+@import "intro";
 @import "confetti";
 @import "map";
 @import "form";
@@ -69,22 +70,6 @@ button {
   margin: auto;
 }
 
-.Intro {
-  margin-top: 12vh;
-  h1 {
-    font-size: 73px;
-    letter-spacing: -0.5px;
-    line-height: 1;
-    margin: 15px 0;
-  }
-  .instructions {
-    margin: 30px auto 45px auto;
-    .inline-button {
-      line-height: inherit;
-    }
-  }
-}
-
 .inline-map {
   width: 100%;
   margin: 45px auto;
@@ -100,20 +85,21 @@ button {
 }
 
 .big-button {
+  margin: 30px 0;
   font-size: inherit;
   padding: 5px 45px;
 }
 
-// .outline-button {
-//   text-decoration: none;
-//   color: inherit;
-//   background: none;
-//   border: solid 3px;
-//   &:hover {
-//     background: $black;
-//     color: #fff;
-//   }
-// }
+.outline-button {
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: solid 3px;
+  &:hover {
+    background: $black;
+    color: #fff;
+  }
+}
 
 .fill-button {
   border: none;
@@ -131,10 +117,16 @@ button {
   height: 150px;
   width: 3px;
   margin: 45px auto 30px;
-  // background-image: linear-gradient($black 33%, rgba($black, 0) 0%);
   background-image: linear-gradient($lightGrey 33%, rgba($lightGrey, 0) 0%);
   background-position: right;
   background-size: 3px 30px;
   background-repeat: repeat-y;
   transition: background-image 0.6s;
+}
+
+.error-message {
+  height: 34px;
+  display: block;
+  font-size: 17px;
+  color: $red;
 }

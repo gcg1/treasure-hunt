@@ -25,7 +25,7 @@ export class Form extends React.Component {
         },
         {
           id: "oak",
-          question: "What dangerous insect is found in the old oak tree?",
+          question: "What dangerous insect lives in the old oak tree?",
           options: ["Stag beetle", "Moth", "Bumblebee", "Grasshopper"],
           answer: "Moth",
         },
@@ -68,7 +68,7 @@ export class Form extends React.Component {
         },
         {
           id: "woodland",
-          question: "What animal’s house can you see on the Woodland walk?",
+          question: "What animal’s house can you see along the woodland walk?",
           options: ["Horse", "Badger", "Bat", "Butterfly"],
           answer: "Bat",
         },
@@ -130,7 +130,9 @@ export class Form extends React.Component {
     } else if (this.state.correctAnswers === this.state.riddles.length) {
       this.successTransition();
     } else {
-      this.setState({ error: "Not quite right... try again!" });
+      this.setState({
+        error: "Not quite right... try again!",
+      });
       this.failureAnimation();
     }
   }
@@ -152,7 +154,7 @@ export class Form extends React.Component {
     ));
 
     return (
-      <form className="riddles" onChange={this.removeError}>
+      <form name="riddles" className="riddles" onChange={this.removeError}>
         {riddlesList}
 
         <div id="check" className="treasure-chest-wrapper">

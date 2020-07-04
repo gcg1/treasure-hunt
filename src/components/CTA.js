@@ -37,8 +37,12 @@ export class CTA extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({ submitted: true });
-    addEmailToGoogleSheet(this.state.email, this.state.permission_to_contact);
+    if (this.state.email.includes("@")) {
+      this.setState({ submitted: true });
+      addEmailToGoogleSheet(this.state.email, this.state.permission_to_contact);
+    } else {
+      this.setState({ error: "Please enter an email address" });
+    }
   }
 
   render() {

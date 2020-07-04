@@ -25,104 +25,98 @@
     color: #fff;
     background-color: $primary;
   }
-  svg {
-    display: block;
-    margin: 45px auto;
+  .treasure-chest-wrapper {
+    svg {
+      display: block;
+      margin: auto;
 
-    #lock {
-      transform: rotate(0deg);
-      transform-box: fill-box;
-      transform-origin: center;
-      transition: transform 0.15s;
-      #lock-gap {
+      #lock {
+        transform: rotate(0deg);
+        transform-box: fill-box;
+        transform-origin: center;
+        transition: transform 0.15s;
+        #lock-gap {
+          transform-box: fill-box;
+          transform-origin: bottom;
+          opacity: 0;
+          transform: rotateX(90deg);
+          transition: transform 0.15s;
+        }
+      }
+      #lock.animating {
+        animation-name: swing;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+      }
+      @keyframes swing {
+        0% {
+          transform: rotate(0deg);
+        }
+        10% {
+          transform: rotate(20deg);
+        }
+        30% {
+          transform: rotate(-20deg);
+        }
+        50% {
+          transform: rotate(12deg);
+        }
+        70% {
+          transform: rotate(-6deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      #lid-underside {
+        transform: rotateX(90deg);
         transform-box: fill-box;
         transform-origin: bottom;
-        opacity: 0;
-        transform: rotateX(90deg);
-        transition: transform 0.15s;
-      }
-    }
-    #lock.animating {
-      animation-name: swing;
-      animation-duration: 0.5s;
-      animation-timing-function: linear;
-    }
-    @keyframes swing {
-      0% {
-        transform: rotate(0deg);
-      }
-      10% {
-        transform: rotate(20deg);
-      }
-      30% {
-        transform: rotate(-20deg);
-      }
-      50% {
-        transform: rotate(12deg);
-      }
-      70% {
-        transform: rotate(-6deg);
-      }
-      100% {
-        transform: rotate(0deg);
-      }
-    }
-
-    #lid-underside {
-      transform: rotateX(90deg);
-      transform-box: fill-box;
-      transform-origin: bottom;
-      transition: transform 1.5s ease;
-      transition-delay: 0.15s;
-    }
-    #gold-blur {
-      opacity: 0;
-      transition: opacity 1.5s;
-      transition-delay: 0.15s;
-    }
-    #chest-top {
-      transform: rotateX(0);
-      transition: transform 1.5s ease;
-      transition-delay: 0.15s;
-    }
-
-    #treasure-chest.unlocked {
-      #lid-underside {
-        transform: rotateX(0deg);
+        transition: transform 1.5s ease;
+        transition-delay: 0.15s;
       }
       #gold-blur {
-        opacity: 0.6;
+        opacity: 0;
+        transition: opacity 1.5s;
+        transition-delay: 0.15s;
       }
       #chest-top {
-        transform: rotateX(70deg);
+        transform: rotateX(0);
+        transition: transform 1.5s ease;
+        transition-delay: 0.15s;
       }
-      #lock {
-        transform: rotate(10deg);
-        #lock-gap {
-          opacity: 1;
+
+      #treasure-chest.unlocked {
+        #lid-underside {
           transform: rotateX(0deg);
+        }
+        #gold-blur {
+          opacity: 0.6;
+        }
+        #chest-top {
+          transform: rotateX(70deg);
+        }
+        #lock {
+          transform: rotate(10deg);
+          #lock-gap {
+            opacity: 1;
+            transform: rotateX(0deg);
+          }
         }
       }
     }
   }
+
   .big-button {
     cursor: pointer;
     appearance: none;
-  }
-  .error-message {
-    margin-top: 5px;
-    height: 34px;
-    display: block;
-    font-size: 17px;
-    color: $red;
   }
 }
 
 .App.dark {
   .riddles {
-    input {
-      pointer-events: none;
-    }
+    pointer-events: none;
     input[type="radio"]:not(:checked) + label {
       color: #fff;
       background-color: $primary;
@@ -130,8 +124,6 @@
     }
     .big-button,
     .error-message {
-      // pointer-events: none;
-      // outline: none;
       display: none;
     }
   }

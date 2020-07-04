@@ -10,25 +10,39 @@ export class Riddle extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.scrollTo = this.scrollTo.bind(this);
+    this.scrollToNextSection = this.scrollToNextSection.bind(this);
   }
 
-  scrollTo(id) {
+  scrollTo(id, offset) {
     scroller.scrollTo(id, {
       duration: 500,
-      offset: 80,
+      offset: offset,
       delay: 50,
       smooth: true,
     });
   }
 
+  scrollToNextSection() {
+    const nextRiddle = `riddle-${this.props.questionNumber + 1}`;
+    if (
+      // Need the "+ 1" here for this to work... but why?
+      this.props.totalAnswers + 1 < this.props.totalQuestions &&
+      this.props.questionNumber < this.props.totalQuestions
+    ) {
+      if (
+        document.getElementById(nextRiddle).classList.contains("unanswered")
+      ) {
+        this.scrollTo(nextRiddle, 80);
+      }
+    } else {
+      this.scrollTo("check", 0);
+    }
+  }
+
   handleChange(e) {
     if (this.state.value.length === 0) {
       this.props.incrementTotalAnswers();
-      if (this.props.questionsLeft > 0) {
-        this.scrollTo(`riddle-${this.props.questionNumber + 1}`);
-      } else {
-        this.scrollTo("check");
-      }
+      this.scrollToNextSection();
     }
     if (e.target.value === this.state.answer) {
       this.props.incrementCorrectAnswers();
@@ -62,7 +76,7 @@ export class Riddle extends React.Component {
     return (
       <div
         className={`riddle-wrapper ${
-          this.state.value === "" ? "unanswered" : ""
+          this.state.value === "" ? "unanswered" : "answered"
         }`}
         id={`riddle-${this.props.questionNumber}`}
       >

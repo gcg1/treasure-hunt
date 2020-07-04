@@ -1,6 +1,7 @@
 import React from "react";
 import { Riddle } from "./Riddle";
 import { addCompletionToGoogleSheet } from "../GoogleSheet";
+import { scroller } from "react-scroll";
 
 export class Form extends React.Component {
   constructor(props) {
@@ -126,7 +127,12 @@ export class Form extends React.Component {
     e.preventDefault();
     if (this.state.totalAnswers < this.state.riddles.length) {
       this.setState({ error: "Have you answered ALL the questions?" });
-      this.failureAnimation();
+      scroller.scrollTo("unanswered", {
+        duration: 500,
+        offset: 80,
+        delay: 50,
+        smooth: true,
+      });
     } else if (this.state.correctAnswers === this.state.riddles.length) {
       this.successTransition();
     } else {
@@ -147,6 +153,8 @@ export class Form extends React.Component {
         question={riddle.question}
         options={riddle.options}
         answer={riddle.answer}
+        totalQuestions={this.state.riddles.length}
+        totalAnswers={this.state.totalAnswers}
         incrementTotalAnswers={this.incrementTotalAnswers}
         incrementCorrectAnswers={this.incrementCorrectAnswers}
         decrementCorrectAnswers={this.decrementCorrectAnswers}

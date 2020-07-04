@@ -18,7 +18,10 @@ export class Footer extends React.Component {
             </a>
           </span>
         </div>
-        <a href="sms:07851598021&body=Hi, I'm having some trouble with the treasure hunt...">
+        <a
+          className="support-link"
+          href="sms:07851598021&body=Hi, I'm having some trouble with the treasure hunt..."
+        >
           Support
         </a>
       </footer>

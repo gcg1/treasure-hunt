@@ -659,7 +659,7 @@ button {
 }
 
 .error-message {
-  height: 34px;
+  line-height: 1.6;
   display: block;
   font-size: 17px;
   color: #e74c3c;

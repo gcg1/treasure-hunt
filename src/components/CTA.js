@@ -7,6 +7,7 @@ export class CTA extends React.Component {
     super(props);
     this.state = {
       email: "",
+      error: "",
       permission_to_contact: "yes",
       submitted: false,
       contestants: "",
@@ -35,11 +36,22 @@ export class CTA extends React.Component {
       : this.setState({ permission_to_contact: "yes" });
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
     if (this.state.email.includes("@")) {
-      this.setState({ submitted: true });
-      addEmailToGoogleSheet(this.state.email, this.state.permission_to_contact);
+      // need to display error message if email can't be submitted
+      try {
+        const addEmail = await addEmailToGoogleSheet(
+          this.state.email,
+          this.state.permission_to_contact
+        );
+        this.setState({ submitted: true });
+      } catch (err) {
+        this.setState({
+          error:
+            "There was a problem submitting your email adress. Check you're connected to the internet and try again.",
+        });
+      }
     } else {
       this.setState({ error: "Please enter an email address" });
     }
@@ -52,8 +64,9 @@ export class CTA extends React.Component {
           <form className="CTA" onSubmit={this.handleSubmit}>
             <h2>Congratulations</h2>
             <p>
-              Enter into a draw for the grand prize. There are only{" "}
-              {this.state.contestants} contestants so far!
+              Enter into a draw for the grand prize.{" "}
+              {typeof this.state.contestants === "number" &&
+                `There are only ${this.state.contestants} contestants so far!`}
             </p>
             <input
               type="email"
@@ -68,6 +81,8 @@ export class CTA extends React.Component {
               type="submit"
               value="Enter prize draw"
             />
+
+            <span className="error-message">{this.state.error}</span>
 
             <div className="checkbox-wrapper">
               <input

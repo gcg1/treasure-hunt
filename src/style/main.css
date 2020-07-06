@@ -34,8 +34,8 @@
   }
   body .App .inline-map {
     display: block;
-    height: 550px;
-    margin: auto;
+    height: 600px;
+    margin: 30px auto 0 auto;
   }
   body .App .riddles {
     max-width: none;
@@ -58,17 +58,20 @@
   body .App .riddles .riddle-wrapper input[type="radio"]:checked + label {
     background-color: #fff;
   }
-  body .App .riddles::after {
-    margin-top: 150px;
-    content: "Check your answers at MorleyPark.co.uk";
-    padding: 5px 30px;
-    border: solid #00263e 1px;
-  }
   body .App .treasure-chest-wrapper {
     display: none;
   }
   body .App footer {
-    margin: 30px auto 0 auto;
+    margin: 60px auto 0 auto;
+  }
+  body .App footer .support-link {
+    display: none;
+  }
+  body .App footer::before {
+    margin-top: 150px;
+    content: "Check your answers at MorleyPark.co.uk";
+    padding: 5px 30px;
+    border: solid #00263e 1px;
   }
 }
 

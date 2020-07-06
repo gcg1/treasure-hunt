@@ -22,8 +22,8 @@
       }
       .inline-map {
         display: block;
-        height: 550px;
-        margin: auto;
+        height: 600px;
+        margin: 30px auto 0 auto;
       }
       .riddles {
         max-width: none;
@@ -48,18 +48,21 @@
             background-color: #fff;
           }
         }
-        &::after {
-          margin-top: 150px;
-          content: "Check your answers at MorleyPark.co.uk";
-          padding: 5px 30px;
-          border: solid $black 1px;
-        }
       }
       .treasure-chest-wrapper {
         display: none;
       }
       footer {
-        margin: 30px auto 0 auto;
+        margin: 60px auto 0 auto;
+        .support-link {
+          display: none;
+        }
+        &::before {
+          margin-top: 150px;
+          content: "Check your answers at MorleyPark.co.uk";
+          padding: 5px 30px;
+          border: solid $black 1px;
+        }
       }
     }
   }

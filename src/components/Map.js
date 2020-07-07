@@ -6,6 +6,9 @@ import "../../node_modules/photoswipe/dist/default-skin/default-skin.css";
 import PhotoSwipe from "photoswipe";
 import PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
 
+import Mixpanel from "mixpanel";
+const mixpanel = Mixpanel.init("0116233a22eec871253819800d0214a7");
+
 export class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +20,9 @@ export class Map extends React.Component {
     const items = [{ src: `${map}`, w: 1110, h: 1320 }];
     const mapModal = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items);
     mapModal.init();
+    mixpanel.track("Open map", {
+      map_opened: true,
+    });
   }
 
   render() {

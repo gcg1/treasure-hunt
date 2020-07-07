@@ -24,7 +24,6 @@ export class Footer extends React.Component {
         <a
           className="support-link hidden-on-desktop"
           href={`sms:07851598021&body=${supportMessageTemplate}`}
-          target="_blank"
         >
           Support
         </a>
@@ -32,6 +31,7 @@ export class Footer extends React.Component {
           className="support-link hidden-on-mobile"
           href="mailto:georgefbcunliffe+treasurehunt@gmail.com?&subject=Treasure%20Hunt"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Support
         </a>

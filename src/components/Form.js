@@ -137,7 +137,7 @@ export class Form extends React.Component {
       this.successTransition();
     } else {
       this.setState({
-        error: "Not quite right... try again!",
+        error: "Not quite right... try again! Check the map for clues.",
       });
       this.failureAnimation();
     }

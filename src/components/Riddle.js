@@ -1,6 +1,9 @@
 import React from "react";
 import { scroller } from "react-scroll";
 
+import Mixpanel from "mixpanel";
+const mixpanel = Mixpanel.init("0116233a22eec871253819800d0214a7");
+
 export class Riddle extends React.Component {
   constructor(props) {
     super(props);
@@ -40,6 +43,12 @@ export class Riddle extends React.Component {
   }
 
   handleChange(e) {
+    mixpanel.track("Question answered", {
+      question_number: this.props.questionNumber,
+      question_id: this.props.id,
+      answered_correctly: e.target.value === this.state.answer,
+    });
+    // if an answer is selected for this question for the first time...
     if (this.state.value.length === 0) {
       this.props.incrementTotalAnswers();
       this.scrollToNextSection();

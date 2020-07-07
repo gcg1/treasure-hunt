@@ -9,6 +9,13 @@ import { CTA } from "./components/CTA";
 import { Footer } from "./components/Footer";
 import Confetti from "react-confetti";
 
+// var mixpanel = require("mixpanel-browser");
+// mixpanel.init("YOUR_TOKEN", { api_host: "api-eu.mixpanel.com" }, "");
+// mixpanel.track("An event");
+
+import Mixpanel from "mixpanel";
+const mixpanel = Mixpanel.init("0116233a22eec871253819800d0214a7");
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -21,6 +28,14 @@ class App extends React.Component {
 
     this.promptFab = this.promptFab.bind(this);
     this.toggleSuccess = this.toggleSuccess.bind(this);
+  }
+
+  componentDidMount() {
+    window.onbeforeprint = () => {
+      mixpanel.track("Print", {
+        print_dialogue_opened: true,
+      });
+    };
   }
 
   toggleSuccess() {

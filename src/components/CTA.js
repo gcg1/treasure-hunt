@@ -2,6 +2,9 @@ import React from "react";
 import { addEmailToGoogleSheet } from "../GoogleSheet";
 import { numContestants } from "../GoogleSheet";
 
+import Mixpanel from "mixpanel";
+const mixpanel = Mixpanel.init("0116233a22eec871253819800d0214a7");
+
 export class CTA extends React.Component {
   constructor(props) {
     super(props);
@@ -39,13 +42,16 @@ export class CTA extends React.Component {
   async handleSubmit(e) {
     e.preventDefault();
     if (this.state.email.includes("@")) {
-      // need to display error message if email can't be submitted
       try {
         const addEmail = await addEmailToGoogleSheet(
           this.state.email,
           this.state.permission_to_contact
         );
         this.setState({ submitted: true });
+        mixpanel.track("Prize draw entry", {
+          email: this.state.email,
+          permission_to_contact: this.state.permission_to_contact,
+        });
       } catch (err) {
         this.setState({
           error:
@@ -66,7 +72,9 @@ export class CTA extends React.Component {
             <p>
               Enter into a draw for the grand prize.{" "}
               {typeof this.state.contestants === "number" &&
-                `There are only ${this.state.contestants} contestants so far!`}
+                `There are only ${
+                  this.state.contestants - 1
+                } contestants so far!`}
             </p>
             <input
               type="email"

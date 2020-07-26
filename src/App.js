@@ -9,10 +9,6 @@ import { CTA } from "./components/CTA";
 import { Footer } from "./components/Footer";
 import Confetti from "react-confetti";
 
-// var mixpanel = require("mixpanel-browser");
-// mixpanel.init("YOUR_TOKEN", { api_host: "api-eu.mixpanel.com" }, "");
-// mixpanel.track("An event");
-
 import Mixpanel from "mixpanel";
 const mixpanel = Mixpanel.init("0116233a22eec871253819800d0214a7");
 

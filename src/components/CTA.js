@@ -72,9 +72,7 @@ export class CTA extends React.Component {
             <p>
               Enter into a draw for the grand prize.{" "}
               {typeof this.state.contestants === "number" &&
-                `There are only ${
-                  this.state.contestants - 1
-                } contestants so far!`}
+                `There are ${this.state.contestants - 1} contestants so far!`}
             </p>
             <input
               type="email"

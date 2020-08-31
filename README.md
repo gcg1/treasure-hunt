@@ -1,6 +1,6 @@
 # Treasure Hunt
 
-A simple React app to encourage people to explore their local park.
+A simple React app to help local families stay active during lockdown.
 
 [View the live site.](https://morleypark.co.uk/?ref=github)
 

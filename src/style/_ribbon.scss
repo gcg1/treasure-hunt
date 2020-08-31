@@ -1,0 +1,14 @@
+@import "variables";
+
+.ribbon {
+  background-color: $primary;
+  color: #fff;
+
+  button {
+    width: 100%;
+    padding: 5px;
+    background: none;
+    border: none;
+    font-size: 17px;
+  }
+}

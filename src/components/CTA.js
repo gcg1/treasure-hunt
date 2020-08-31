@@ -69,7 +69,8 @@ export class CTA extends React.Component {
         {this.state.submitted === false && (
           <form className="CTA" onSubmit={this.handleSubmit}>
             <h2>Congratulations</h2>
-            <p>
+            <p>You did it!</p>
+            {/* <p>
               Enter into a draw for the grand prize.{" "}
               {typeof this.state.contestants === "number" &&
                 `There are ${this.state.contestants - 1} contestants so far!`}
@@ -102,7 +103,7 @@ export class CTA extends React.Component {
               <label htmlFor="permission-to-contact">
                 Tell me about park news.
               </label>
-            </div>
+            </div> */}
           </form>
         )}
         {this.state.submitted === true && (

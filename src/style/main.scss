@@ -3,6 +3,8 @@
 
 @import "print";
 
+@import "alert";
+@import "ribbon";
 @import "header";
 @import "intro";
 @import "confetti";
@@ -41,7 +43,6 @@ input {
 }
 
 .App {
-  padding: 20px;
   color: $black;
   background-color: $ultralight;
   text-align: center;
@@ -67,6 +68,7 @@ button {
 
 .content {
   max-width: 600px;
+  padding: 20px;
   margin: auto;
 }
 

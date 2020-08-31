@@ -2,6 +2,9 @@ import React from "react";
 import "./style/main.css";
 import { Audio } from "./components/Audio";
 import { Map } from "./components/Map";
+import { Alert } from "./components/Alert";
+
+import { Ribbon } from "./components/Ribbon";
 import { Header } from "./components/Header";
 import { Intro } from "./components/Intro";
 import { Form } from "./components/Form";
@@ -16,6 +19,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      alert: false,
       success: false,
       animatingFab: false,
       animatingChest: false,
@@ -23,6 +27,7 @@ class App extends React.Component {
     };
 
     this.promptFab = this.promptFab.bind(this);
+    this.toggleAlert = this.toggleAlert.bind(this);
     this.toggleSuccess = this.toggleSuccess.bind(this);
   }
 
@@ -32,6 +37,10 @@ class App extends React.Component {
         print_dialogue_opened: true,
       });
     };
+  }
+
+  toggleAlert() {
+    this.setState({ alert: !this.state.alert });
   }
 
   toggleSuccess() {
@@ -52,11 +61,13 @@ class App extends React.Component {
   render() {
     return (
       <div className={`App ${this.state.success ? "dark" : ""}`}>
+        <Ribbon toggleAlert={this.toggleAlert} />
         <div className="content">
           <Audio />
           {this.state.success && <Confetti />}
           <Map animate={this.promptFab} animating={this.state.animatingFab} />
-          <Header />
+          {/* <Header /> */}
+          {this.state.alert && <Alert toggleAlert={this.toggleAlert} />}
           <Intro mapPrompt={this.promptFab} />
           <Form
             toggleSuccess={this.toggleSuccess}

@@ -75,6 +75,74 @@
   }
 }
 
+.alert {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #00263e;
+}
+
+.alert .alert-header {
+  text-align: right;
+}
+
+.alert .alert-header button {
+  background: none;
+  border: none;
+  padding: 20px;
+}
+
+.alert .alert-header button svg {
+  width: 50px;
+  height: 50px;
+  fill: #fff;
+}
+
+.alert .alert-content {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+}
+
+.alert .alert-content div {
+  width: 100%;
+}
+
+@media (min-width: 450px) and (min-height: 700px) {
+  .alert .alert-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+.ribbon {
+  background-color: #00b9cd;
+  color: #fff;
+}
+
+.ribbon button {
+  width: 100%;
+  padding: 5px;
+  background: none;
+  border: none;
+  font-size: 17px;
+}
+
 .inline-button.print-button {
   font-size: 19px;
   padding: 0 20px;
@@ -425,7 +493,7 @@
 }
 
 .CTA p {
-  margin: 15px auto;
+  margin: 30px auto;
   max-width: 450px;
   line-height: 1.5;
 }
@@ -576,7 +644,6 @@ input {
 }
 
 .App {
-  padding: 20px;
   color: #00263e;
   background-color: #f7f5ec;
   text-align: center;
@@ -604,6 +671,7 @@ button {
 
 .content {
   max-width: 600px;
+  padding: 20px;
   margin: auto;
 }
 

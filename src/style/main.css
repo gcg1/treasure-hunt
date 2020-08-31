@@ -131,6 +131,9 @@
 }
 
 .ribbon {
+  top: 0;
+  position: fixed;
+  width: 100%;
   background-color: #00b9cd;
   color: #fff;
 }
@@ -140,7 +143,7 @@
   padding: 5px;
   background: none;
   border: none;
-  font-size: 17px;
+  font-size: inherit;
 }
 
 .inline-button.print-button {
@@ -672,7 +675,7 @@ button {
 .content {
   max-width: 600px;
   padding: 20px;
-  margin: auto;
+  margin: 30px auto 0 auto;
 }
 
 .inline-map {

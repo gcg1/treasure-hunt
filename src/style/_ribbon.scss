@@ -1,6 +1,9 @@
 @import "variables";
 
 .ribbon {
+  top: 0;
+  position: fixed;
+  width: 100%;
   background-color: $primary;
   color: #fff;
 
@@ -9,6 +12,6 @@
     padding: 5px;
     background: none;
     border: none;
-    font-size: 17px;
+    font-size: inherit;
   }
 }

@@ -69,7 +69,24 @@ export class CTA extends React.Component {
         {this.state.submitted === false && (
           <form className="CTA" onSubmit={this.handleSubmit}>
             <h2>Congratulations</h2>
-            <p>You did it!</p>
+            <p>
+              You did it! Unfortunately the prize draw ended on 31st August.
+              Leave your email below and we'll let you know about future park
+              events and news.
+            </p>
+            <input
+              type="email"
+              placeholder="jack@sparrow.com"
+              value={this.state.email}
+              onChange={this.handleEmailChange}
+              required
+            ></input>
+            <input
+              className="big-button fill-button"
+              type="submit"
+              value="Enter prize draw"
+            />
+            <span className="error-message">{this.state.error}</span>
             {/* <p>
               Enter into a draw for the grand prize.{" "}
               {typeof this.state.contestants === "number" &&

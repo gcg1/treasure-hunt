@@ -1,32 +1,33 @@
 {
   "files": {
-    "main.css": "/static/css/main.09888f22.chunk.css",
-    "main.js": "/static/js/main.594d9a36.chunk.js",
-    "main.js.map": "/static/js/main.594d9a36.chunk.js.map",
+    "main.css": "/static/css/main.3ed82a94.chunk.css",
+    "main.js": "/static/js/main.0b4c03b0.chunk.js",
+    "main.js.map": "/static/js/main.0b4c03b0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2ef6263e.js",
     "runtime-main.js.map": "/static/js/runtime-main.2ef6263e.js.map",
     "static/css/2.9d655fbe.chunk.css": "/static/css/2.9d655fbe.chunk.css",
-    "static/js/2.a31cb2bf.chunk.js": "/static/js/2.a31cb2bf.chunk.js",
-    "static/js/2.a31cb2bf.chunk.js.map": "/static/js/2.a31cb2bf.chunk.js.map",
+    "static/js/2.fa931464.chunk.js": "/static/js/2.fa931464.chunk.js",
+    "static/js/2.fa931464.chunk.js.map": "/static/js/2.fa931464.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2d89e2cf408a0dc18c7e80a77d063245.js": "/precache-manifest.2d89e2cf408a0dc18c7e80a77d063245.js",
+    "precache-manifest.8f78d3caee7da90e40498c5e3bd20f78.js": "/precache-manifest.8f78d3caee7da90e40498c5e3bd20f78.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.9d655fbe.chunk.css.map": "/static/css/2.9d655fbe.chunk.css.map",
-    "static/css/main.09888f22.chunk.css.map": "/static/css/main.09888f22.chunk.css.map",
-    "static/js/2.a31cb2bf.chunk.js.LICENSE.txt": "/static/js/2.a31cb2bf.chunk.js.LICENSE.txt",
+    "static/css/main.3ed82a94.chunk.css.map": "/static/css/main.3ed82a94.chunk.css.map",
+    "static/js/2.fa931464.chunk.js.LICENSE.txt": "/static/js/2.fa931464.chunk.js.LICENSE.txt",
     "static/media/main.css": "/static/media/Impact.8fc622c3.ttf",
     "static/media/creak.mp3": "/static/media/creak.0c8af0bc.mp3",
     "static/media/default-skin.css": "/static/media/default-skin.b257fa9c.svg",
     "static/media/fanfare.mp3": "/static/media/fanfare.e684d700.mp3",
     "static/media/locked.mp3": "/static/media/locked.1249411f.mp3",
     "static/media/map.svg": "/static/media/map.5439ac16.svg",
-    "static/media/ohdear.mp3": "/static/media/ohdear.3e7e8065.mp3"
+    "static/media/ohdear.mp3": "/static/media/ohdear.3e7e8065.mp3",
+    "static/media/staticChest.svg": "/static/media/staticChest.ce103ba4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.2ef6263e.js",
     "static/css/2.9d655fbe.chunk.css",
-    "static/js/2.a31cb2bf.chunk.js",
-    "static/css/main.09888f22.chunk.css",
-    "static/js/main.594d9a36.chunk.js"
+    "static/js/2.fa931464.chunk.js",
+    "static/css/main.3ed82a94.chunk.css",
+    "static/js/main.0b4c03b0.chunk.js"
   ]
 }

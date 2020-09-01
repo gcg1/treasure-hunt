@@ -84,7 +84,7 @@ export class CTA extends React.Component {
             <input
               className="big-button fill-button"
               type="submit"
-              value="Enter prize draw"
+              value="Let me know"
             />
             <span className="error-message">{this.state.error}</span>
             {/* <p>

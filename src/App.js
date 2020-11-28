@@ -61,12 +61,12 @@ class App extends React.Component {
   render() {
     return (
       <div className={`App ${this.state.success ? "dark" : ""}`}>
-        <Ribbon toggleAlert={this.toggleAlert} />
+        {/* <Ribbon toggleAlert={this.toggleAlert} /> */}
         <div className="content">
           <Audio />
-          {this.state.success && <Confetti />}
+          {this.state.success && <Confetti colors={["#ffffff"]} />}
           <Map animate={this.promptFab} animating={this.state.animatingFab} />
-          {/* <Header /> */}
+          <Header />
           {this.state.alert && <Alert toggleAlert={this.toggleAlert} />}
           <Intro mapPrompt={this.promptFab} />
           <Form

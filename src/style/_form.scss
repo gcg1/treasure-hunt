@@ -1,9 +1,10 @@
 @import "variables";
 
 .riddles {
-  max-width: 500px;
+  max-width: 480px;
   margin: auto;
   .riddle-question {
+    font-weight: 700;
     line-height: 1.5;
   }
   label {
@@ -26,9 +27,16 @@
     background-color: $primary;
   }
   .treasure-chest-wrapper {
+    position: relative;
+
+    .christmas-tree {
+    }
+
     svg {
-      display: block;
-      margin: auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
 
       #lock {
         transform: rotate(0deg);

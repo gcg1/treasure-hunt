@@ -160,6 +160,12 @@
   margin-top: 10%;
 }
 
+.Intro .christmas-subtitle {
+  width: 130px;
+  display: block;
+  margin: auto;
+}
+
 .Intro h1 {
   font-size: 73px;
   letter-spacing: -0.5px;
@@ -215,7 +221,7 @@
   right: 20px;
   width: 72px;
   height: 72px;
-  background-color: #00263e;
+  background-color: #28896d;
   border-radius: 99px;
   -webkit-box-shadow: rgba(0, 38, 62, 0.25) 0 2px 4px;
           box-shadow: rgba(0, 38, 62, 0.25) 0 2px 4px;
@@ -285,11 +291,12 @@
 }
 
 .riddles {
-  max-width: 500px;
+  max-width: 480px;
   margin: auto;
 }
 
 .riddles .riddle-question {
+  font-weight: 700;
   line-height: 1.5;
 }
 
@@ -318,9 +325,16 @@
   background-color: #00b9cd;
 }
 
+.riddles .treasure-chest-wrapper {
+  position: relative;
+}
+
 .riddles .treasure-chest-wrapper svg {
-  display: block;
-  margin: auto;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
 }
 
 .riddles .treasure-chest-wrapper svg #lock {
@@ -588,7 +602,7 @@ footer .like-counter button .heart-border {
 }
 
 footer .like-counter button .heart-fill {
-  fill: #e74c3c;
+  fill: #cc291f;
   display: none;
 }
 
@@ -647,6 +661,9 @@ input {
 }
 
 .App {
+  position: absolute;
+  top: 0;
+  width: 100%;
   color: #00263e;
   background-color: #f7f5ec;
   text-align: center;
@@ -700,19 +717,19 @@ button {
 
 .outline-button {
   text-decoration: none;
-  color: inherit;
+  color: #cc291f;
   background: none;
   border: solid 3px;
 }
 
 .outline-button:hover {
-  background: #00263e;
+  background: #cc291f;
   color: #fff;
 }
 
 .fill-button {
   border: none;
-  background: #00b9cd;
+  background: #cc291f;
   color: #fff;
   -webkit-box-shadow: rgba(0, 38, 62, 0) 0 0;
           box-shadow: rgba(0, 38, 62, 0) 0 0;
@@ -746,6 +763,6 @@ button {
   line-height: 1.6;
   display: block;
   font-size: 17px;
-  color: #e74c3c;
+  color: #cc291f;
 }
 /*# sourceMappingURL=main.css.map */

@@ -2,6 +2,7 @@ import React from "react";
 import { Riddle } from "./Riddle";
 import { addCompletionToGoogleSheet } from "../GoogleSheet";
 import { scroller } from "react-scroll";
+import christmasTree from "../assets/christmasTree.svg";
 
 export class Form extends React.Component {
   constructor(props) {
@@ -12,66 +13,60 @@ export class Form extends React.Component {
       error: "",
       riddles: [
         {
-          id: "latin",
+          id: "ursuline_colors",
           question:
-            "Which Latin motto is written 4 times on the doors of a building?",
-          options: ["Emeritus", "Meliora", "Serviam", "Apricus"],
-          answer: "Serviam",
+            "Which colours make up the Ursuline School crest?",
+          options: ["Red & blue", "Red & white", "Black & red", "Blue & white"],
+          answer: "Blue & white",
         },
         {
-          id: "bikes",
-          question: "How many bike rails in the bike shelter?",
-          options: ["10", "12", "14", "16"],
-          answer: "12",
+          id: "sport",
+          question: "What sport is most often played in the park?",
+          options: ["Hockey", "Football", "Rugby", "Cricket"],
+          answer: "Football",
         },
         {
-          id: "oak",
-          question: "What dangerous insect lives in the old oak tree?",
-          options: ["Stag beetle", "Moth", "Bumblebee", "Grasshopper"],
-          answer: "Moth",
+          id: "bear",
+          question: "Find the bear in Morley Park. What is he holding?",
+          options: ["Bow and arrow", "Hammer", "Pickaxe", "Spade"],
+          answer: "Pickaxe",
         },
         {
-          id: "scouts",
-          question:
-            "They have a hut in the South West corner of the Park. What colour is their banner?",
-          options: ["Purple", "Orange", "Green", "Blue"],
-          answer: "Purple",
+          id: "cycling",
+          question: "What's forbidden near the pond?",
+          options: ["Dogs", "Swimming", "Picnics", "Cycling"],
+          answer: "Cycling",
+        },
+        {
+          id: "signpost",
+          question: "Find the signpost near the pond. What is signalled at the bottom of the sign?",
+          options: ["Exit", "Entrance", "Woodland Walk", "Bus stop"],
+          answer: "Bus stop",
         },
         {
           id: "steps",
-          question: "How many steps up to the wildflower meadow?",
-          options: ["11", "13", "15", "17"],
-          answer: "15",
+          question: "How many steps from the wildflower meadow up to the bus stop?",
+          options: ["16", "24", "28", "31"],
+          answer: "28",
         },
         {
-          id: "pond",
-          question: "What are tall and skinny and live in the pond?",
-          options: ["Foxgloves", "Bamboo", "Sunflowers", "Bulrushes"],
-          answer: "Bulrushes",
+          id: "painting_bird",
+          question:
+            "Find the painting of woodland creatures. What bird is looking at the mushrooms?",
+          options: ["Woodpecker", "Robin", "Magpie", "Owl"],
+          answer: "Woodpecker",
         },
         {
-          id: "fruit",
-          question: "What summer fruit can you find in the meadow?",
-          options: ["Pears", "Strawberries", "Blackberries", "Cherries"],
-          answer: "Blackberries",
+          id: "missing_animal",
+          question: "Take a closer look at the painting. Which animal is missing?",
+          options: ["Hedgehog", "Fox", "Squirrel", "Badger"],
+          answer: "Badger",
         },
         {
-          id: "flowers",
-          question: "Which flower colour CAN’T you find in the park?",
-          options: ["Red", "White", "Purple", "Yellow"],
-          answer: "Red",
-        },
-        {
-          id: "benches",
-          question: "How many benches are there in the meadow?",
-          options: ["1", "2", "3", "4"],
-          answer: "3",
-        },
-        {
-          id: "woodland",
-          question: "What animal’s house can you see along the woodland walk?",
-          options: ["Horse", "Badger", "Bat", "Butterfly"],
-          answer: "Bat",
+          id: "lights",
+          question: "How many lights are there beside the long path down to the car park?",
+          options: ["18", "21", "25", "31"],
+          answer: "21",
         },
       ],
     };
@@ -448,6 +443,7 @@ export class Form extends React.Component {
               </filter>
             </defs>
           </svg>
+          <img className="christmas-tree" src={christmasTree} />
         </div>
 
         <input

@@ -43,6 +43,9 @@ input {
 }
 
 .App {
+  position: absolute;
+  top: 0;
+  width: 100%;
   color: $black;
   background-color: $ultralight;
   text-align: center;
@@ -94,18 +97,18 @@ button {
 
 .outline-button {
   text-decoration: none;
-  color: inherit;
+  color: $xmasRed;
   background: none;
   border: solid 3px;
   &:hover {
-    background: $black;
+    background: $xmasRed;
     color: #fff;
   }
 }
 
 .fill-button {
   border: none;
-  background: $primary;
+  background: $xmasRed;
   color: #fff;
   box-shadow: rgba($black, 0) 0 0;
   transition: transform 0.15s, box-shadow 0.15s;

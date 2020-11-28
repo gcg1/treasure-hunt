@@ -69,7 +69,7 @@ export class CTA extends React.Component {
         {this.state.submitted === false && (
           <form className="CTA" onSubmit={this.handleSubmit}>
             <h2>Congratulations</h2>
-            <p>
+            {/* <p>
               You did it! Unfortunately the prize draw ended on 31st August.
               Leave your email below and we'll let you know about future park
               events and news.
@@ -86,15 +86,15 @@ export class CTA extends React.Component {
               type="submit"
               value="Let me know"
             />
-            <span className="error-message">{this.state.error}</span>
-            {/* <p>
+            <span className="error-message">{this.state.error}</span> */}
+            <p>
               Enter into a draw for the grand prize.{" "}
               {typeof this.state.contestants === "number" &&
-                `There are ${this.state.contestants - 1} contestants so far!`}
+                `There are ${this.state.contestants - 49} contestants so far!`}
             </p>
             <input
               type="email"
-              placeholder="jack@sparrow.com"
+              placeholder="santa@claus.com"
               value={this.state.email}
               onChange={this.handleEmailChange}
               required
@@ -120,14 +120,14 @@ export class CTA extends React.Component {
               <label htmlFor="permission-to-contact">
                 Tell me about park news.
               </label>
-            </div> */}
+            </div>
           </form>
         )}
         {this.state.submitted === true && (
           <div>
             <h2>Thank you</h2>
             <p>
-              The lucky winner will be randomly selected on Monday 31st August.
+              The lucky winner will be randomly selected on Sunday 10th January.
               Good luck!
             </p>
           </div>

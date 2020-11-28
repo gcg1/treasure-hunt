@@ -1,33 +1,35 @@
 {
   "files": {
-    "main.css": "/static/css/main.adb49f36.chunk.css",
-    "main.js": "/static/js/main.a81b2907.chunk.js",
-    "main.js.map": "/static/js/main.a81b2907.chunk.js.map",
+    "main.css": "/static/css/main.7e283491.chunk.css",
+    "main.js": "/static/js/main.175d0315.chunk.js",
+    "main.js.map": "/static/js/main.175d0315.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2ef6263e.js",
     "runtime-main.js.map": "/static/js/runtime-main.2ef6263e.js.map",
     "static/css/2.9d655fbe.chunk.css": "/static/css/2.9d655fbe.chunk.css",
-    "static/js/2.fa931464.chunk.js": "/static/js/2.fa931464.chunk.js",
-    "static/js/2.fa931464.chunk.js.map": "/static/js/2.fa931464.chunk.js.map",
+    "static/js/2.c791a4bb.chunk.js": "/static/js/2.c791a4bb.chunk.js",
+    "static/js/2.c791a4bb.chunk.js.map": "/static/js/2.c791a4bb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.62455819458706b7ae1b06ab9d580fb3.js": "/precache-manifest.62455819458706b7ae1b06ab9d580fb3.js",
+    "precache-manifest.f7c9674bc30c50f7b9e4e36800ab621f.js": "/precache-manifest.f7c9674bc30c50f7b9e4e36800ab621f.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.9d655fbe.chunk.css.map": "/static/css/2.9d655fbe.chunk.css.map",
-    "static/css/main.adb49f36.chunk.css.map": "/static/css/main.adb49f36.chunk.css.map",
-    "static/js/2.fa931464.chunk.js.LICENSE.txt": "/static/js/2.fa931464.chunk.js.LICENSE.txt",
+    "static/css/main.7e283491.chunk.css.map": "/static/css/main.7e283491.chunk.css.map",
+    "static/js/2.c791a4bb.chunk.js.LICENSE.txt": "/static/js/2.c791a4bb.chunk.js.LICENSE.txt",
     "static/media/main.css": "/static/media/Impact.8fc622c3.ttf",
+    "static/media/christmas.svg": "/static/media/christmas.a8f95539.svg",
+    "static/media/christmasTree.svg": "/static/media/christmasTree.1a02bebb.svg",
     "static/media/creak.mp3": "/static/media/creak.0c8af0bc.mp3",
     "static/media/default-skin.css": "/static/media/default-skin.b257fa9c.svg",
     "static/media/fanfare.mp3": "/static/media/fanfare.e684d700.mp3",
     "static/media/locked.mp3": "/static/media/locked.1249411f.mp3",
-    "static/media/map.svg": "/static/media/map.5439ac16.svg",
+    "static/media/map.svg": "/static/media/map.fd9a21d8.svg",
     "static/media/ohdear.mp3": "/static/media/ohdear.3e7e8065.mp3",
     "static/media/staticChest.svg": "/static/media/staticChest.ce103ba4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.2ef6263e.js",
     "static/css/2.9d655fbe.chunk.css",
-    "static/js/2.fa931464.chunk.js",
-    "static/css/main.adb49f36.chunk.css",
-    "static/js/main.a81b2907.chunk.js"
+    "static/js/2.c791a4bb.chunk.js",
+    "static/css/main.7e283491.chunk.css",
+    "static/js/main.175d0315.chunk.js"
   ]
 }

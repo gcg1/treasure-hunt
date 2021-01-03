@@ -53,7 +53,7 @@ export class Form extends React.Component {
           id: "painting_bird",
           question:
             "Find the painting of woodland creatures. What bird is looking at the mushrooms?",
-          options: ["Woodpecker", "Robin", "Magpie", "Owl"],
+          options: ["Woodpecker", "Robin", "Blue tit", "Owl"],
           answer: "Woodpecker",
         },
         {

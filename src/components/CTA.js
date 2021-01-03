@@ -127,7 +127,7 @@ export class CTA extends React.Component {
           <div>
             <h2>Thank you</h2>
             <p>
-              The lucky winner will be randomly selected on Sunday 10th January.
+              The lucky winner will be randomly selected on Sunday 31st January.
               Good luck!
             </p>
           </div>

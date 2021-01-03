@@ -62,6 +62,7 @@ class App extends React.Component {
     return (
       <div className={`App ${this.state.success ? "dark" : ""}`}>
         {/* <Ribbon toggleAlert={this.toggleAlert} /> */}
+        <Ribbon />
         <div className="content">
           <Audio />
           {this.state.success && <Confetti colors={["#ffffff"]} />}

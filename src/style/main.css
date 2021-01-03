@@ -132,7 +132,7 @@
 
 .ribbon {
   top: 0;
-  position: fixed;
+  position: absolute;
   width: 100%;
   background-color: #00b9cd;
   color: #fff;

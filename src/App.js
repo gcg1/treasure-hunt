@@ -65,8 +65,9 @@ class App extends React.Component {
         <Ribbon />
         <div className="content">
           <Audio />
-          {this.state.success && <Confetti colors={["#ffffff"]} />}
-          <Map animate={this.promptFab} animating={this.state.animatingFab} />
+          {this.state.success && <Confetti />}
+          {/* {this.state.success && <Confetti colors={["#ffffff"]} />} */}
+          {/* <Map animate={this.promptFab} animating={this.state.animatingFab} /> */}
           <Header />
           {this.state.alert && <Alert toggleAlert={this.toggleAlert} />}
           <Intro mapPrompt={this.promptFab} />

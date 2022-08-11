@@ -90,11 +90,13 @@ export class CTA extends React.Component {
             <p>
               Enter into a draw for the grand prize.{" "}
               {typeof this.state.contestants === "number" &&
-                `There are ${this.state.contestants - 48} contestants so far!`}
+                `There are ${
+                  this.state.contestants - 48 - 27
+                } contestants so far!`}
             </p>
             <input
               type="email"
-              placeholder="santa@claus.com"
+              placeholder="jack@sparrow.com"
               value={this.state.email}
               onChange={this.handleEmailChange}
               required
@@ -127,8 +129,8 @@ export class CTA extends React.Component {
           <div>
             <h2>Thank you</h2>
             <p>
-              The lucky winner will be randomly selected on Sunday 31st January.
-              Good luck!
+              The lucky winner will be randomly selected on Saturday 31st
+              September. Good luck!
             </p>
           </div>
         )}

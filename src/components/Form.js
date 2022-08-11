@@ -13,60 +13,77 @@ export class Form extends React.Component {
       error: "",
       riddles: [
         {
-          id: "ursuline_colors",
+          id: "crest_stars",
+          question: "How many stars are there on each Ursuline School crest?",
+          options: ["3", "5", "7", "9"],
+          answer: "7",
+        },
+        {
+          id: "tree_type",
           question:
-            "Which colours make up the Ursuline School crest?",
-          options: ["Red & blue", "Red & white", "Black & red", "Blue & white"],
-          answer: "Blue & white",
+            "In the large, newly planted flower bed by the Cottenham Park Road entrance, there are 3 young trees. What are they?",
+          options: ["Oak", "Apple", "Silver Birch", "Rowan"],
+          answer: "Rowan",
+        },
+        {
+          id: "creature_eggs",
+          question:
+            "In springtime and early summer, the pond in the wildflower meadow is full of frogs, toads, newts and dragonflies. According to the large green information board at the foot of the Woodland Walk, one of these creatures lays its eggs one at a time and wrapped in a single leaf. Which one?",
+          options: ["Frog", "Toad", "Newt", "Dragonfly"],
+          answer: "Newt",
+        },
+        {
+          id: "wildflower_posts",
+          question:
+            "How many posts surround and protect the wildflower meadow?",
+          options: ["20", "22", "24", "26"],
+          answer: "22",
+        },
+        {
+          id: "yellow_flower",
+          question:
+            "In the wildflower meadow, there is a yellow flower which is poisonous to cows but loved by butterflies.  Is it:",
+          options: ["Buttercup", "Poppy", "Daisy", "Ragwort"],
+          answer: "Ragwort",
+        },
+        {
+          id: "girl_age",
+          question:
+            "Around the wildflower meadow, there are 3 notices, asking people not to enter the roped area. How old is the girl who painted the picture on the notices?",
+          options: ["5", "6", "7", "8"],
+          answer: "5",
+        },
+        {
+          id: "bat_boxes",
+          question:
+            "How many bat homes (boxes) can you see along the North-South link path?",
+          options: ["1", "2", "3", "5"],
+          answer: "3",
+        },
+        {
+          id: "frog_lifecycle",
+          question:
+            "According to the large green noticeboard by the pond at the foot of the Woodland Walk, there are 7 stages to a frog’s life cycle.  What is the 4th?",
+          options: [
+            "Tadpole",
+            "Tadpole with 4 legs",
+            "Young frog",
+            "Adult frog",
+          ],
+          answer: "Tadpole with 4 legs",
+        },
+        {
+          id: "colour_photographs",
+          question:
+            "How many colour photographs of creatures and flowers are there on the green noticeboard by the pond?",
+          options: ["22", "25", "27", "31"],
+          answer: "27",
         },
         {
           id: "sport",
           question: "What sport is most often played in the park?",
           options: ["Hockey", "Football", "Rugby", "Cricket"],
           answer: "Football",
-        },
-        {
-          id: "bear",
-          question: "Find the bear in Morley Park. What is he holding?",
-          options: ["Bow and arrow", "Hammer", "Pickaxe", "Spade"],
-          answer: "Pickaxe",
-        },
-        {
-          id: "cycling",
-          question: "What's forbidden near the pond?",
-          options: ["Dogs", "Swimming", "Picnics", "Cycling"],
-          answer: "Cycling",
-        },
-        {
-          id: "signpost",
-          question: "Find the signpost near the pond. What is signalled at the bottom of the sign?",
-          options: ["Exit", "Entrance", "Woodland Walk", "Bus stop"],
-          answer: "Bus stop",
-        },
-        {
-          id: "steps",
-          question: "How many steps from the wildflower meadow up to the bus stop?",
-          options: ["16", "24", "28", "31"],
-          answer: "28",
-        },
-        {
-          id: "painting_bird",
-          question:
-            "Find the painting of woodland creatures. What bird is looking at the mushrooms?",
-          options: ["Woodpecker", "Robin", "Blue tit", "Owl"],
-          answer: "Woodpecker",
-        },
-        {
-          id: "missing_animal",
-          question: "Take a closer look at the painting. Which animal is missing?",
-          options: ["Hedgehog", "Fox", "Squirrel", "Badger"],
-          answer: "Badger",
-        },
-        {
-          id: "lights",
-          question: "How many lights are there beside the long path down to the car park?",
-          options: ["18", "21", "25", "31"],
-          answer: "21",
         },
       ],
     };
@@ -132,7 +149,8 @@ export class Form extends React.Component {
       this.successTransition();
     } else {
       this.setState({
-        error: "Not quite right... try again! Check the map for clues.",
+        // error: "Not quite right... try again! Check the map for clues.",
+        error: "Not quite right... check your answers and try again!",
       });
       this.failureAnimation();
     }
@@ -443,7 +461,10 @@ export class Form extends React.Component {
               </filter>
             </defs>
           </svg>
-          <img className="christmas-tree" src={christmasTree} />
+          <br />
+          <br />
+          <br />
+          {/* <img className="christmas-tree" src={christmasTree} /> */}
         </div>
 
         <input

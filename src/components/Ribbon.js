@@ -4,7 +4,7 @@ export const Ribbon = (props) => {
   return (
     <div className="ribbon">
       {/* <button onClick={props.toggleAlert}>We have a winner!</button> */}
-      <span>Draw closes 31st Jan</span>
+      <span>Draw closes 31st September</span>
     </div>
   );
 };

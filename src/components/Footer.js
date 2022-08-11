@@ -33,7 +33,7 @@ export class Footer extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Support
+          Help!
         </a>
       </footer>
     );

@@ -12,7 +12,7 @@ export class Intro extends React.Component {
         <br />
         <h1>Treasure Hunt</h1>
         <p className="instructions">
-          Answer 10 questions around Morley Park to unlock the treasure.
+          Answer 9 questions around Morley Park to unlock the treasure.
           {/* Check{" "}
           <button className="inline-button" onClick={this.props.mapPrompt}>
             your map

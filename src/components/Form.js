@@ -46,13 +46,13 @@ export class Form extends React.Component {
           options: ["Buttercup", "Poppy", "Daisy", "Ragwort"],
           answer: "Ragwort",
         },
-        {
-          id: "girl_age",
-          question:
-            "Around the wildflower meadow, there are 3 notices, asking people not to enter the roped area. How old is the girl who painted the picture on the notices?",
-          options: ["5", "6", "7", "8"],
-          answer: "5",
-        },
+        // {
+        //   id: "girl_age",
+        //   question:
+        //     "Around the wildflower meadow, there are 3 notices, asking people not to enter the roped area. How old is the girl who painted the picture on the notices?",
+        //   options: ["5", "6", "7", "8"],
+        //   answer: "5",
+        // },
         {
           id: "bat_boxes",
           question:

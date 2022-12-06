@@ -13,77 +13,58 @@ export class Form extends React.Component {
       error: "",
       riddles: [
         {
-          id: "crest_stars",
-          question: "How many stars are there on each Ursuline School crest?",
-          options: ["3", "5", "7", "9"],
-          answer: "7",
+          id: "Rowan tree",
+          question: "",
+          options: ["Robin", "Rabbit", "Rowan tree"],
+          answer: "Rowan tree",
         },
         {
-          id: "tree_type",
-          question:
-            "In the large, newly planted flower bed by the Cottenham Park Road entrance, there are 3 young trees. What are they?",
-          options: ["Oak", "Apple", "Silver Birch", "Rowan"],
-          answer: "Rowan",
+          id: "Toad",
+          question: "",
+          options: ["Tadpole", "Toad", "Tawny owl"],
+          answer: "Toad",
         },
         {
-          id: "creature_eggs",
-          question:
-            "In springtime and early summer, the pond in the wildflower meadow is full of frogs, toads, newts and dragonflies. According to the large green information board at the foot of the Woodland Walk, one of these creatures lays its eggs one at a time and wrapped in a single leaf. Which one?",
-          options: ["Frog", "Toad", "Newt", "Dragonfly"],
-          answer: "Newt",
+          id: "Starling",
+          question: "",
+          options: ["Sparrow", "Starling", "Scout hut"],
+          answer: "Starling",
         },
         {
-          id: "wildflower_posts",
-          question:
-            "How many posts surround and protect the wildflower meadow?",
-          options: ["20", "22", "24", "26"],
-          answer: "22",
+          id: "Cuckoo",
+          question: "",
+          options: ["Cuckoo", "Chaffinch", "Crow"],
+          answer: "Cuckoo",
         },
         {
-          id: "yellow_flower",
-          question:
-            "In the wildflower meadow, there is a yellow flower which is poisonous to cows but loved by butterflies.  Is it:",
-          options: ["Buttercup", "Poppy", "Daisy", "Ragwort"],
-          answer: "Ragwort",
-        },
-        // {
-        //   id: "girl_age",
-        //   question:
-        //     "Around the wildflower meadow, there are 3 notices, asking people not to enter the roped area. How old is the girl who painted the picture on the notices?",
-        //   options: ["5", "6", "7", "8"],
-        //   answer: "5",
-        // },
-        {
-          id: "bat_boxes",
-          question:
-            "How many bat homes (boxes) can you see along the North-South link path?",
-          options: ["1", "2", "3", "5"],
-          answer: "3",
+          id: "Mouse",
+          question: "",
+          options: ["Mouse", "Meadow", "Mud"],
+          answer: "Mouse",
         },
         {
-          id: "frog_lifecycle",
-          question:
-            "According to the large green noticeboard by the pond at the foot of the Woodland Walk, there are 7 stages to a frog’s life cycle.  What is the 4th?",
-          options: [
-            "Tadpole",
-            "Tadpole with 4 legs",
-            "Young frog",
-            "Adult frog",
-          ],
-          answer: "Tadpole with 4 legs",
+          id: "Holly",
+          question: "",
+          options: ["Heron", "Hawthorn", "Holly"],
+          answer: "Holly",
         },
         {
-          id: "colour_photographs",
-          question:
-            "How many colour photographs of creatures and flowers are there on the green noticeboard by the pond?",
-          options: ["22", "25", "27", "31"],
-          answer: "27",
+          id: "Stinging nettles",
+          question: "",
+          options: ["Stinging nettles", "Steps", "Signpost"],
+          answer: "Stinging nettles",
         },
         {
-          id: "sport",
-          question: "What sport is most often played in the park?",
-          options: ["Hockey", "Football", "Rugby", "Cricket"],
-          answer: "Football",
+          id: "Ivy",
+          question: "",
+          options: ["Information board", "Ivy", "Insects"],
+          answer: "Ivy",
+        },
+        {
+          id: "Acorn",
+          question: "",
+          options: ["Ant", "Acorn", "Apple tree"],
+          answer: "Acorn",
         },
       ],
     };

@@ -445,7 +445,7 @@ export class Form extends React.Component {
           <br />
           <br />
           <br />
-          {/* <img className="christmas-tree" src={christmasTree} /> */}
+          <img className="christmas-tree" src={christmasTree} />
         </div>
 
         <input

@@ -8,14 +8,12 @@ export class Intro extends React.Component {
     return (
       <div className="Intro">
         {/* <span>Morley Park</span> */}
-        {/* <img className="christmas-subtitle" src={christmas} /> */}
+        <img className="christmas-subtitle" src={christmas} />
         <br />
         <h1>Treasure Hunt</h1>
         <p className="instructions">
           Hunt for 9 pictures placed around Morley Park and choose the matching
-          bird, plant, animal, tree or item from the choices below. Re-arrange
-          the first letters of each correct answer to make a new 9-letter word.
-          Clue: the word is a very popular one right now!
+          bird, plant, animal, tree or item.
           {/* Check{" "}
           <button className="inline-button" onClick={this.props.mapPrompt}>
             your map

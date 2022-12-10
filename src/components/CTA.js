@@ -91,7 +91,7 @@ export class CTA extends React.Component {
               Enter into a draw for the grand prize.{" "}
               {typeof this.state.contestants === "number" &&
                 `There are ${
-                  this.state.contestants - 48 - 27
+                  this.state.contestants - 48 - 31
                 } contestants so far!`}
             </p>
             <input
@@ -129,8 +129,8 @@ export class CTA extends React.Component {
           <div>
             <h2>Thank you</h2>
             <p>
-              The lucky winner will be randomly selected on Saturday 31st
-              September. Good luck!
+              The lucky winner will be randomly selected on 31st January. Good
+              luck!
             </p>
           </div>
         )}

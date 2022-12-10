@@ -66,7 +66,7 @@ class App extends React.Component {
         <div className="content">
           <Audio />
           {this.state.success && <Confetti />}
-          {/* {this.state.success && <Confetti colors={["#ffffff"]} />} */}
+          {this.state.success && <Confetti colors={["#ffffff"]} />}
           {/* <Map animate={this.promptFab} animating={this.state.animatingFab} /> */}
           <Header />
           {this.state.alert && <Alert toggleAlert={this.toggleAlert} />}

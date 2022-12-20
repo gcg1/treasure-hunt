@@ -70,11 +70,10 @@ export class CTA extends React.Component {
           <form className="CTA" onSubmit={this.handleSubmit}>
             <h2>Congratulations</h2>
             {/* <p>
-              You did it! Unfortunately the prize draw ended on 31st August.
-              Leave your email below and we'll let you know about future park
-              events and news.
-            </p>
-            <input
+              You did it! BONUS: take the first letter of each answer and
+              rearrange it to form a word that is very popular right now!
+            </p> */}
+            {/* <input
               type="email"
               placeholder="jack@sparrow.com"
               value={this.state.email}
@@ -85,8 +84,8 @@ export class CTA extends React.Component {
               className="big-button fill-button"
               type="submit"
               value="Let me know"
-            />
-            <span className="error-message">{this.state.error}</span> */}
+            /> */}
+            {/* <span className="error-message">{this.state.error}</span> */}
             <p>
               Enter into a draw for the grand prize.{" "}
               {typeof this.state.contestants === "number" &&
@@ -131,6 +130,10 @@ export class CTA extends React.Component {
             <p>
               The lucky winner will be randomly selected on 31st January. Good
               luck!
+            </p>
+            <p>
+              BONUS QUESTION: take the first letter of each answer and rearrange
+              it to form a word that is very popular right now!
             </p>
           </div>
         )}
